@@ -34,17 +34,19 @@ const Carasouel = () => {
   };
 
   return (
-    <div className="relative h-[500px] overflow-hidden">
+    <div className="relative h-[700px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-500 ${currentSlide === index ? 'opacity-100' : 'opacity-0'}`}
           style={{
             backgroundImage: `url(${slide.img})`,
-            backgroundSize: 'cover',
+            backgroundSize: 'fit',
             backgroundPosition: 'center',
+            backgroundRepeat:'no-repeat',
             height: '100%',
             width: '100%'
+
           }}
         >
         </div>

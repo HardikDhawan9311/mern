@@ -12,7 +12,7 @@ function App() {
       <div>
       <Header/>
       <Carasouel/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
     </>
   )
