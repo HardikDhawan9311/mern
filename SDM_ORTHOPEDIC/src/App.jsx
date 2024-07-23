@@ -1,7 +1,8 @@
 import './App.css'
-import Carasouel from './Componets/HomePage/Carasouel'
-import Header from './Componets/HomePage/Header'
+// import Carasouel from './Componets/HomePage/Carasouel'
+// import Header from './Componets/HomePage/Header'
 import Footer from './Componets/HomePage/Footer'
+// import SocialToogleButton from './Componets/HomePage/SocialToogleButton'
 
 
 function App() {
@@ -10,9 +11,9 @@ function App() {
   return (
     <>
       <div>
-      <Header/>
-      <Carasouel/>
-      <Footer/>
+      <Footer/> 
+      {/* <Carasouel/> */}
+      {/* <SocialToogleButton/> */}
     </div>
     </>
   )
