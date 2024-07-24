@@ -1,49 +1,44 @@
 import React, { useState } from 'react';
-import logo from '../../assets/Images/logo.png'
+import logo from '../../assets/Images/logo.png';
+
 const Header = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
 
   const handleDropdownToggle = () => {
-    setDropdownOpen(true); // Keep the dropdown open when clicking on "Products"
+    setDropdownOpen(!isDropdownOpen);
   };
 
   const handleProductClick = (product) => {
     setActiveProduct(activeProduct === product ? null : product);
   };
 
-  const handleDropdownClose = () => {
-    setDropdownOpen(false);
-    setActiveProduct(null); // Close subproduct list when dropdown closes
+  const handleMobileMenuToggle = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <header className="header sticky top-0 bg-blue-100 shadow-md flex justify-between items-center px-8 py-2">
+    <header className="header  top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20">
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-10 w-22 mr-4" />
+        <img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" />
       </div>
-      <nav className="nav font-semibold text-lg flex-1 flex justify-end relative">
-        <ul className="flex items-center space-x-4">
-          <li
+      <nav className="nav font-semibold text-lg flex-1 flex justify-end items-center relative z-20">
+        <div className="hidden md:flex items-center space-x-4">
+          <div
             className="relative"
             onMouseEnter={handleDropdownToggle}
-            onMouseLeave={handleDropdownClose}
+            onMouseLeave={handleDropdownToggle}
           >
             <a
               href="#"
               className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer flex items-center"
             >
               Products
-              <svg
-                className="ml-2 fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7 10l5 5 5-5H7z" />
-              </svg>
+              <i className="fas fa-chevron-down ml-2"></i>
             </a>
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded border border-gray-200 z-10 whitespace-nowrap">
+              <div className="absolute top-12 left-0 bg-white shadow-lg rounded border border-gray-200 z-30">
                 <ul className="space-y-2 p-4">
                   {['Product 1', 'Product 2', 'Product 3'].map((product) => (
                     <li
@@ -53,7 +48,7 @@ const Header = () => {
                     >
                       <a href="#">{product}</a>
                       {activeProduct === product && (
-                        <div className="absolute left-full top-0 mt-2 bg-white shadow-lg rounded border border-gray-200 z-20 whitespace-nowrap">
+                        <div className="absolute left-full top-0 mt-2 bg-white shadow-lg rounded border border-gray-200 z-40">
                           <ul className="space-y-2 p-4">
                             <li className="cursor-pointer hover:text-green-500">
                               <a href="#">Subproduct 1</a>
@@ -72,15 +67,11 @@ const Header = () => {
                 </ul>
               </div>
             )}
-          </li>
-          <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
-            <a href="#">About Us</a>
-          </li>
-          <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
-            <a href="#">Contact Us</a>
-          </li>
-        </ul>
-        <div className="flex items-center w-full max-w-md mx-4">
+          </div>
+          <a href="#" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">About Us</a>
+          <a href="#" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">Contact Us</a>
+        </div>
+        <div className="hidden md:flex items-center w-full max-w-md mx-4">
           <input
             className="w-full border border-gray-300 px-4 py-1 text-gray-400 outline-none focus:border-blue-500 transition duration-200"
             type="search"
@@ -93,22 +84,71 @@ const Header = () => {
             className="m-2 rounded bg-blue-600 px-4 py-2 text-white"
             aria-label="Search button"
           >
-            <svg
-              className="fill-current h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              id="Capa_1"
-              viewBox="0 0 56.966 56.966"
-              width="512px"
-              height="512px"
-            >
-              <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z" />
-            </svg>
+            <i className="fas fa-search"></i>
+          </button>
+        </div>
+        <div className="flex items-center md:hidden">
+          <button
+            onClick={handleMobileMenuToggle}
+            className="text-gray-600 focus:outline-none"
+          >
+            <i className="fas fa-bars text-xl"></i>
           </button>
         </div>
       </nav>
+      {isMobileMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded border border-gray-200 z-30 md:hidden">
+          <ul className="space-y-2 p-4">
+            <li
+              className="relative cursor-pointer hover:text-green-500"
+              onClick={() => handleProductClick('Products')}
+            >
+              <a href="#">Products <i className="fas fa-chevron-down ml-2"></i></a>
+              {activeProduct === 'Products' && (
+                <div className="pl-4 mt-2">
+                  <ul className="space-y-2">
+                    <li className="cursor-pointer hover:text-green-500">
+                      <a href="#">Product 1</a>
+                    </li>
+                    <li className="cursor-pointer hover:text-green-500">
+                      <a href="#">Product 2</a>
+                    </li>
+                    <li className="cursor-pointer hover:text-green-500">
+                      <a href="#">Product 3</a>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </li>
+            <li className="cursor-pointer hover:text-green-500">
+              <a href="#">About Us</a>
+            </li>
+            <li className="cursor-pointer hover:text-green-500">
+              <a href="#">Contact Us</a>
+            </li>
+            <li>
+              <div className="flex items-center w-full max-w-md mx-4">
+                <input
+                  className="w-full border border-gray-300 px-4 py-1 text-gray-400 outline-none focus:border-blue-500 transition duration-200"
+                  type="search"
+                  name="search"
+                  placeholder="Search..."
+                  aria-label="Search"
+                />
+                <button
+                  type="submit"
+                  className="m-2 rounded bg-blue-600 px-4 py-2 text-white"
+                  aria-label="Search button"
+                >
+                  <i className="fas fa-search"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
-}
+};
 
 export default Header;
