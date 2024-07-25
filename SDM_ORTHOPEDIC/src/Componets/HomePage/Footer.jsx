@@ -3,7 +3,7 @@ import logo from '../../assets/Images/logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-auto container mx-auto flex justify-between items-center">
+    <footer className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-auto container mx-auto flex justify-between items-center mt-24">
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
