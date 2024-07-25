@@ -4,7 +4,7 @@ import Carasouel from './Componets/HomePage/Carasouel'
 import Header from './Componets/HomePage/Header'
 import Footer from './Componets/HomePage/Footer'
 import Contact_us from './Componets/HomePage/Contact_us';
-
+import Main from './Componets/Main'
 
 function App() {
   
@@ -16,6 +16,7 @@ function App() {
       <Header/>
       <Carasouel/>
       {/* <Contact_us/> */}
+       <Main/>
       <Footer/>
       
     </div>
