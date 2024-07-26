@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../../assets/Images/logo.png';
 
-const Header = () => {
+const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
@@ -151,4 +151,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
