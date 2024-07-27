@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import logo from '../../assets/Images/logo.png';
+import { NavLink } from 'react-router-dom';
+import logo from '../../../assets/Images/logo.png';
+
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -19,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="header  top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20">
+    <header className="header top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20">
       <div className="flex items-center">
         <img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" />
       </div>
@@ -30,13 +32,13 @@ const Navbar = () => {
             onMouseEnter={handleDropdownToggle}
             onMouseLeave={handleDropdownToggle}
           >
-            <a
-              href="#"
+            <NavLink
+              to="#"
               className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer flex items-center"
             >
               Products
               <i className="fas fa-chevron-down ml-2"></i>
-            </a>
+            </NavLink>
             {isDropdownOpen && (
               <div className="absolute top-12 left-0 bg-white shadow-lg rounded border border-gray-200 z-30">
                 <ul className="space-y-2 p-4">
@@ -46,18 +48,18 @@ const Navbar = () => {
                       className="relative cursor-pointer hover:text-green-500"
                       onClick={() => handleProductClick(product)}
                     >
-                      <a href="#">{product}</a>
+                      <NavLink to="#">{product}</NavLink>
                       {activeProduct === product && (
                         <div className="absolute left-full top-0 mt-2 bg-white shadow-lg rounded border border-gray-200 z-40">
                           <ul className="space-y-2 p-4">
                             <li className="cursor-pointer hover:text-green-500">
-                              <a href="#">Subproduct 1</a>
+                              <NavLink to="#">Subproduct 1</NavLink>
                             </li>
                             <li className="cursor-pointer hover:text-green-500">
-                              <a href="#">Subproduct 2</a>
+                              <NavLink to="#">Subproduct 2</NavLink>
                             </li>
                             <li className="cursor-pointer hover:text-green-500">
-                              <a href="#">Subproduct 3</a>
+                              <NavLink to="#">Subproduct 3</NavLink>
                             </li>
                           </ul>
                         </div>
@@ -68,8 +70,12 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <a href="#" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">About Us</a>
-          <a href="#" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">Contact Us</a>
+          <NavLink to="/about" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+            About Us
+          </NavLink>
+          <NavLink to="/contact_us" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+            Contact Us
+          </NavLink>
         </div>
         <div className="hidden md:flex items-center w-full max-w-md mx-4">
           <input
@@ -103,28 +109,28 @@ const Navbar = () => {
               className="relative cursor-pointer hover:text-green-500"
               onClick={() => handleProductClick('Products')}
             >
-              <a href="#">Products <i className="fas fa-chevron-down ml-2"></i></a>
+              <NavLink to="#">Products <i className="fas fa-chevron-down ml-2"></i></NavLink>
               {activeProduct === 'Products' && (
                 <div className="pl-4 mt-2">
                   <ul className="space-y-2">
                     <li className="cursor-pointer hover:text-green-500">
-                      <a href="#">Product 1</a>
+                      <NavLink to="#">Product 1</NavLink>
                     </li>
                     <li className="cursor-pointer hover:text-green-500">
-                      <a href="#">Product 2</a>
+                      <NavLink to="#">Product 2</NavLink>
                     </li>
                     <li className="cursor-pointer hover:text-green-500">
-                      <a href="#">Product 3</a>
+                      <NavLink to="#">Product 3</NavLink>
                     </li>
                   </ul>
                 </div>
               )}
             </li>
             <li className="cursor-pointer hover:text-green-500">
-              <a href="#">About Us</a>
+              <NavLink to="/about">About Us</NavLink>
             </li>
             <li className="cursor-pointer hover:text-green-500">
-              <a href="#">Contact Us</a>
+              <NavLink to="/contact_us">Contact Us</NavLink>
             </li>
             <li>
               <div className="flex items-center w-full max-w-md mx-4">

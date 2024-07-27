@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './CSS/Carsouel.css';
+import '../CSS/Carsouel.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import img1 from '../../assets/Images/image1.jpg'
+import img1 from '../../../assets/Images/image1.jpg'
 // import img2 from '../../assets/Images/image2.jpg'
-import img3 from '../../assets/Images/image3.jpg'
+import img3 from '../../../assets/Images/image3.jpg'
 
 export default function App() {
   return (
