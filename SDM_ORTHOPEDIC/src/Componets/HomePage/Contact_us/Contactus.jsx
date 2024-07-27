@@ -26,18 +26,18 @@ export default function Contactus() {
         <h2 className="mb-14 font-bold text-4xl text-blue-900 before:block before:absolute before:bg-sky-300 before:content[''] relative before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">Enter your details</h2>
         <div className="grid gap-6 mb-6 grid-cols-2">
           <div className="flex flex-col">
-            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs" aria-placeholder="Votre nom" placeholder="Your Name" ></input>
+            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs"  placeholder="Your Name" ></input>
           </div>
           <div className="flex flex-col">
-            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs" aria-placeholder="Votre nom" placeholder="Company Name" ></input>
+            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs"  placeholder="Company Name" ></input>
           </div>
         </div>
         <div className="grid gap-6 mb-6 grid-cols-2">
           <div className="flex flex-col">
-            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs" aria-placeholder="Votre nom" placeholder="Email Address" ></input>
+            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs"  placeholder="Email Address" ></input>
           </div>
           <div className="flex flex-col">
-            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs" aria-placeholder="Votre nom" placeholder="Subjet" ></input>
+            <input className="py-4 bg-white rounded-full px-6 placeholder:text-xs"  placeholder="Phone no" ></input>
           </div>
         </div>
         <div className="mb-6">
