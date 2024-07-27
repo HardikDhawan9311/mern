@@ -5,6 +5,7 @@ import Footer from "../Footer";
 import img from '../../../assets/Images/logo.png';
 
 export default function Contact() {
+  
   return (
     <>
     <Navbar />
