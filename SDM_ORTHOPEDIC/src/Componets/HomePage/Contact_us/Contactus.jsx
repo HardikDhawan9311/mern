@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
+    Name: '',
     phone: '',
     email: '',
     company: '',
@@ -22,8 +22,8 @@ const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs.send(
-      'service_rxuvce4',
-      'template_rlevnp9',
+      'service_07o5imd',
+      'template_ww9g9rb',
       formData,
       'GMj5gPJ63gLPjLadQ'
     ).then((result) => {
@@ -31,7 +31,7 @@ const ContactUs = () => {
       setTimeout(() => {
         setSubmitted(false);
         setFormData({
-          firstName: '',
+          Name: '',
           phone: '',
           email: '',
           company: '',
@@ -85,8 +85,8 @@ const ContactUs = () => {
                   <input
                     className="py-4 bg-white rounded-full px-6 placeholder:text-xs"
                     placeholder="Name"
-                    name="firstName"
-                    value={formData.firstName}
+                    name="Name"
+                    value={formData.Name}
                     onChange={handleChange}
                     required
                   />
