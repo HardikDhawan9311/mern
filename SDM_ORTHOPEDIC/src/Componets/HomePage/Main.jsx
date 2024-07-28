@@ -26,7 +26,7 @@ export default function Main() {
     <>
     <div className="p-8 bg-gray-50">
        <div id="box" className={`transition-opacity duration-500 ${showBox ? 'opacity-100 animate__animated animate__fadeIn' : 'opacity-0'}`}> 
-        <div  className="   p-8 mt-4 bg-blue-500 shadow-md rounded-lg w-full  h-80 ">
+        <div  className="p-8 mt-4 bg-blue-500 shadow-md rounded-lg w-full  h-80 ">
           <h2 className="text-4xl font-bold text-gray-800 mb-4 text-center font-serif">
             Welcome to SDM
           </h2>

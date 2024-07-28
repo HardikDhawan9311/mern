@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from '../Hero/Navbar'
+import Footer from '../Footer'
 
 export default function Contactus() {
   return (
     <div>
+      <Navbar />
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
   <div className="bg-white max-w-4xl mx-auto w-full">
     <div className="grid grid-cols-6 h-full">
@@ -49,6 +52,7 @@ export default function Contactus() {
       </div>
     </div>
 </div>
+<Footer />
 </div>
     </div>
   )

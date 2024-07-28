@@ -9,7 +9,7 @@ const ContactIcon = () => {
 
   return (
     <div className="fixed bottom-0 right-0 m-6 z-50 md:hidden">
-      <div className={`formbold-form-wrapper mx-auto w-full max-w-[550px] rounded-lg border border-[#e0e0e0] bg-white ${isOpen ? '' : 'hidden'}`}>
+      <div className={`formbold-form-wrapper mx-auto w-full max-w-[550px] rounded-lg border border-[#e0e0e0] bg-white ${isOpen ? '' : 'hidden'}`} >
         <div className="flex items-center justify-between rounded-t-lg bg-cyan-600 py-4 px-9">
           <h3 className="text-xl font-bold text-white">Raise a Query</h3>
           <button onClick={chatboxToggleHandler} className="text-white">
