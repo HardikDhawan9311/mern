@@ -7,7 +7,7 @@ import '../CSS/Carsouel.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import img1 from '../../../assets/Images/image1.jpg'
 // import img2 from '../../assets/Images/image2.jpg'
-import img3 from '../../../assets/Images/image3.jpg'
+import img3 from '../../../assets/Images/image1.jpg'
 
 export default function App() {
   return (

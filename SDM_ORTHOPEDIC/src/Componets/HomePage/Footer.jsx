@@ -1,58 +1,66 @@
-import React from 'react';
-import logo from '../../assets/Images/logo.png';
+import React from "react";
+import "tailwindcss/tailwind.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-auto container mx-auto flex justify-between items-center mt-24">
-      <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div>
-            <img src={logo} className="mr-5 h-6 sm:h-9" alt="logo" />
-            <p className="max-w-xs mt-4 text-sm text-gray-600">
-              <strong>SDM ORTHOPAEDIC</strong>
-              <br />
-              Address: Sector B1, Plot No. E-16, Tronica City Industrial Area Loni, Ghaziabad, Uttar Pradesh - 201103
-              <br />
-              Contact: 9810648410, 9354256801
-            </p>
-            <div className="flex mt-8 space-x-6 text-gray-600">
-              <a className="hover:opacity-75" href="https://facebook.com" target="_blank" rel="noreferrer">
-                <span className="sr-only">Facebook</span>
-                {/* Facebook Icon */}
-              </a>
-              <a className="hover:opacity-75" href="https://instagram.com" target="_blank" rel="noreferrer">
-                <span className="sr-only">Instagram</span>
-                {/* Instagram Icon */}
-              </a>
-              <a className="hover:opacity-75" href="https://twitter.com" target="_blank" rel="noreferrer">
-                <span className="sr-only">Twitter</span>
-                {/* Twitter Icon */}
-              </a>
-              <a className="hover:opacity-75" href="https://youtube.com" target="_blank" rel="noreferrer">
-                <span className="sr-only">YouTube</span>
-                {/* YouTube Icon */}
-              </a>
+    <footer className="relative bg-blueGray-200 pt-8 pb-6">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap text-left lg:text-left">
+          <div className="w-full lg:w-6/12 px-4">
+            <h5 className="text-3xl font-semibold text-blueGray-700">SDM ORTHOPAEDIC</h5>
+            <address>Address: Sector B1, Plot No. E-16, Tronica City Industrial Area Loni, Ghaziabad, Uttar Pradesh - 201103</address>
+            Contact: 9810648410, 9354256801
+
+            <div className="mt-6 lg:mb-0 mb-6 flex">
+              <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i className="fab fa-twitter"></i>
+              </button>
+
+              <button className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i className="fab fa-facebook-square"></i>
+              </button>
+              <button className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i className="fab fa-instagram"></i>
+              </button>
+              <button className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i className="fab fa-youtube"></i>
+              </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <p className="font-medium">Company</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                <a className="hover:opacity-75" href="#">About</a>
-                <a className="hover:opacity-75" href="#">Products</a>
-              </nav>
+          <div className="w-full lg:w-6/12 px-4">
+            <div className="flex flex-wrap items-top mb-6">
+              <div className="w-full lg:w-4/12 px-4">
+                <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2"><strong>Company</strong></span>
+                <ul className="list-unstyled">
+
+                  <li>
+                    <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                  </li>
+                  <li>
+                    <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">About Us</a>
+                  </li>
+                  <li>
+                    <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Our Products</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <p className="text-gray-500 text-sm mt-8">
-          &copy; 2020 Your Company, Inc. All rights reserved.
-        </p>
-        <p className="mt-8 text-xs text-gray-800">
-          Copyright © 2024 sdmorthopedic.com. All Rights Reserved
-        </p>
+        <hr className="my-6 border-blueGray-300" />
+        <div className="flex flex-wrap items-center md:justify-between justify-center">
+          <div className="w-full md:w-4/12 px-4 mx-auto text-center">
+            <div className="text-sm text-blueGray-500 font-semibold py-1">
+              Copyright © <span id="get-current-year">{new Date().getFullYear()}</span>
+              <a href="https://www.creative-tim.com/product/notus-js" className="text-blueGray-500 hover:text-gray-800" target="_blank" rel="noopener noreferrer"> by</a>
+              <a href="https://www.creative-tim.com?ref=njs-profile" className="text-blueGray-500 hover:text-blueGray-800"> sdmorthopaedic.com</a>.
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

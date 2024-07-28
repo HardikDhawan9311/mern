@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/Images/logo.png';
 
-
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="header top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20">
+    <header className="header top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
       <div className="flex items-center">
         <img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" />
       </div>
@@ -40,7 +39,7 @@ const Navbar = () => {
               <i className="fas fa-chevron-down ml-2"></i>
             </NavLink>
             {isDropdownOpen && (
-              <div className="absolute top-12 left-0 bg-white shadow-lg rounded border border-gray-200 z-30">
+              <div className="absolute top-12 left-0 bg-white shadow-lg rounded border border-gray-200 z-50">
                 <ul className="space-y-2 p-4">
                   {['Product 1', 'Product 2', 'Product 3'].map((product) => (
                     <li
@@ -50,7 +49,7 @@ const Navbar = () => {
                     >
                       <NavLink to="#">{product}</NavLink>
                       {activeProduct === product && (
-                        <div className="absolute left-full top-0 mt-2 bg-white shadow-lg rounded border border-gray-200 z-40">
+                        <div className="absolute left-full top-0 mt-2 bg-white shadow-lg rounded border border-gray-200 z-50">
                           <ul className="space-y-2 p-4">
                             <li className="cursor-pointer hover:text-green-500">
                               <NavLink to="#">Subproduct 1</NavLink>
@@ -103,7 +102,7 @@ const Navbar = () => {
         </div>
       </nav>
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded border border-gray-200 z-30 md:hidden">
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded border border-gray-200 z-50 md:hidden">
           <ul className="space-y-2 p-4">
             <li
               className="relative cursor-pointer hover:text-green-500"
