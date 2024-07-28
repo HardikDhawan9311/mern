@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import emailjs from 'emailjs-com';
 
 const ContactUs = () => {
@@ -21,25 +22,40 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.send(
-      'service_07o5imd',
-      'template_ww9g9rb',
-      formData,
-      'GMj5gPJ63gLPjLadQ'
-    ).then((result) => {
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({
-          Name: '',
-          phone: '',
-          email: '',
-          company: '',
-          message: ''
-        });
-      }, 5000);
-    }, (error) => {
-      console.error(error.text);
+    
+    // Send form data to the backend
+    axios.post('http://localhost:8080/users', {
+      username: formData.Name,
+      email: formData.email,
+      phone_number: formData.phone,
+      company_name: formData.company,
+      message: formData.message
+    })
+    .then((result) => {
+      // Send email using emailjs
+      emailjs.send(
+        'service_07o5imd',
+        'template_ww9g9rb',
+        formData,
+        'GMj5gPJ63gLPjLadQ'
+      ).then((result) => {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            Name: '',
+            phone: '',
+            email: '',
+            company: '',
+            message: ''
+          });
+        }, 5000);
+      }, (error) => {
+        console.error(error.text);
+      });
+    })
+    .catch((error) => {
+      console.error(error);
     });
   };
 
