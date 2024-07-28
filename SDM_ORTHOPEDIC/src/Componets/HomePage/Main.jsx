@@ -76,6 +76,7 @@ export default function Main() {
           </div>
         </div>
       </section>
+      
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13987.204181124724!2d77.27600120000001!3d28.785193500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cff0fa36ae7c9%3A0xb2767678a349a48b!2sSdm%20Orthopaedic!5e0!3m2!1sen!2sin!4v1722071985989!5m2!1sen!2sin"

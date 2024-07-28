@@ -154,41 +154,38 @@ function About() {
         </section>
 
         <section className="section-counter py-12 bg-gray-100">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6  shadow-md">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={20} duration={5} />
+                <CountUp end={80} duration={2} />
               </b>
               <span className="text-xl font-semibold">+</span>
             </div>
-            <p className="mt-2 text-center text-gray-700">Years of Experience</p>
+            <p className="mt-2 text-center text-gray-700">Years of Excellence</p>
           </div>
 
-          <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md" >
+          <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={2} duration={5} />
+                <CountUp end={19} duration={2} />
               </b>
               <span className="text-xl font-semibold">k+</span>
             </div>
             <p className="mt-2 text-center text-gray-700">Products</p>
           </div>
 
-          <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md" >
+          <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={100} duration={5} />
+                <CountUp end={100} duration={2} />
               </b>
               <span className="text-xl font-semibold">%</span>
             </div>
             <p className="mt-2 text-center text-gray-700">Satisfied Clients</p>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
 
     <Footer />
