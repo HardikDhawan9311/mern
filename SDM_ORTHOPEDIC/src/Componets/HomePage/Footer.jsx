@@ -1,66 +1,93 @@
-import React from "react";
-import "tailwindcss/tailwind.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import React from 'react';
+import logo from '../../assets/Images/logo.png';
+import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="relative bg-blueGray-200 pt-8 pb-6">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap text-left lg:text-left">
-          <div className="w-full lg:w-6/12 px-4">
-            <h5 className="text-3xl font-semibold text-blueGray-700">SDM ORTHOPAEDIC</h5>
-            <address>Address: Sector B1, Plot No. E-16, Tronica City Industrial Area Loni, Ghaziabad, Uttar Pradesh - 201103</address>
-            Contact: 9810648410, 9354256801
-
-            <div className="mt-6 lg:mb-0 mb-6 flex">
-              <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                <i className="fab fa-twitter"></i>
-              </button>
-
-              <button className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                <i className="fab fa-facebook-square"></i>
-              </button>
-              <button className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                <i className="fab fa-instagram"></i>
-              </button>
-              <button className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                <i className="fab fa-youtube"></i>
-              </button>
+    <footer className="bg-gray-900">
+      <div className="max-w-screen-xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+          {/* Company Section */}
+          <div className="flex flex-col">
+            <div className="flex justify-center text-teal-300 sm:justify-start">
+              <img src={logo} alt="logo" className='h-8' />
+              <h2 className='font-bold text-white ml-2 text-3xl'>ORTHOPEDICS</h2>
             </div>
+            <br />
+            <address className='text-white'>
+              Address: Sector B1, Plot No. E-16, Tronica City Industrial Area Loni, Ghaziabad, Uttar Pradesh - 201103
+            </address>
+            <br />
+            <p className='text-white'>Contact: 9810648410, 9354256801</p>
           </div>
-          <div className="w-full lg:w-6/12 px-4">
-            <div className="flex flex-wrap items-top mb-6">
-              <div className="w-full lg:w-4/12 px-4">
-                <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2"><strong>Company</strong></span>
-                <ul className="list-unstyled">
 
-                  <li>
-                    <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
-                  </li>
-                  <li>
-                    <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">About Us</a>
-                  </li>
-                  <li>
-                    <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Our Products</a>
-                  </li>
-                </ul>
-              </div>
+          {/* Company Links Section */}
+          <div className="flex flex-col items-center">
+            <p className="font-medium text-white">Company</p>
+            <nav className="mt-6">
+              <ul className="space-y-4 text-sm text-center">
+                <li>
+                  <a href="/" className="text-gray-300 hover:underline">Home</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:underline">Products</a>
+                </li>
+                <li>
+                  <a href="/about" className="text-gray-300 hover:underline">About Us</a>
+                </li>
+                <li>
+                  <a href="/contact_us" className="text-gray-300 hover:underline">Contact Us</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          {/* Quick Links Section */}
+          <div className="flex flex-col items-center">
+            <p className="font-medium text-white">Quick Links</p>
+            <nav className="mt-6">
+              <ul className="space-y-4 text-sm text-center">
+                <li>
+                  <a href="#" className="text-gray-300 hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:underline">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:underline">License</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          {/* Social Media Links Section */}
+          <div className="flex flex-col items-center">
+            <p className="font-medium text-white">Follow Us</p>
+            <div className="mt-6 flex space-x-4">
+              <a href="https://facebook.com" className="text-gray-300 hover:text-white" aria-label="Facebook">
+                <FaFacebookF size={20} />
+              </a>
+              <a href="https://twitter.com" className="text-gray-300 hover:text-white" aria-label="Twitter">
+                <FaTwitter size={20} />
+              </a>
+              <a href="https://instagram.com" className="text-gray-300 hover:text-white" aria-label="Instagram">
+                <FaInstagram size={20} />
+              </a>
+              <a href="mailto:example@example.com" className="text-gray-300 hover:text-white" aria-label="Gmail">
+                <FaEnvelope size={20} />
+              </a>
             </div>
           </div>
         </div>
-        <hr className="my-6 border-blueGray-300" />
-        <div className="flex flex-wrap items-center md:justify-between justify-center">
-          <div className="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div className="text-sm text-blueGray-500 font-semibold py-1">
-              Copyright © <span id="get-current-year">{new Date().getFullYear()}</span>
-              <a href="https://www.creative-tim.com/product/notus-js" className="text-blueGray-500 hover:text-gray-800" target="_blank" rel="noopener noreferrer"> by</a>
-              <a href="https://www.creative-tim.com?ref=njs-profile" className="text-blueGray-500 hover:text-blueGray-800"> sdmorthopaedic.com</a>.
-            </div>
-          </div>
+
+        <div className="mt-12 border-t border-gray-800 pt-8">
+          <p className="text-sm text-center text-gray-400">
+            &copy; 2024 Your Company. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

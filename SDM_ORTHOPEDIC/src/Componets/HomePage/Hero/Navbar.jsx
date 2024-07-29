@@ -136,9 +136,7 @@ const Navbar = () => {
             <li className="cursor-pointer hover:text-green-500">
               <NavLink to="/contact_us">Contact Us</NavLink>
             </li>
-            <li>
-              <SearchInput onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
-            </li>
+            
           </ul>
         </div>
       )}
