@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/Images/logo.png';
+import SearchInput from './searchInput';
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
+  const [isSearchActive, setSearchActive] = useState(false);
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -19,13 +21,24 @@ const Navbar = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleSearchFocus = () => {
+    setSearchActive(true);
+  };
+
+  const handleSearchBlur = () => {
+    setSearchActive(false);
+  };
+
   return (
     <header className="header top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
       <div className="flex items-center">
         <img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" />
       </div>
       <nav className="nav font-semibold text-lg flex-1 flex justify-end items-center relative z-20">
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="flex items-center w-full max-w-md mx-4">
+          <SearchInput onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
+        </div>
+        <div className={`hidden md:flex items-center space-x-4 transition-transform duration-300 ease-in-out ${isSearchActive ? 'transform -translate-x-64' : ''}`}>
           <div
             className="relative"
             onMouseEnter={handleDropdownToggle}
@@ -69,28 +82,18 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <NavLink to="/about" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+          <NavLink
+            to="/about"
+            className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+          >
             About Us
           </NavLink>
-          <NavLink to="/contact_us" className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+          <NavLink
+            to="/contact_us"
+            className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+          >
             Contact Us
           </NavLink>
-        </div>
-        <div className="hidden md:flex items-center w-full max-w-md mx-4">
-          <input
-            className="w-full border border-gray-300 px-4 py-1 text-gray-400 outline-none focus:border-blue-500 transition duration-200"
-            type="search"
-            name="search"
-            placeholder="Search..."
-            aria-label="Search"
-          />
-          <button
-            type="submit"
-            className="m-2 rounded bg-blue-600 px-4 py-2 text-white"
-            aria-label="Search button"
-          >
-            <i className="fas fa-search"></i>
-          </button>
         </div>
         <div className="flex items-center md:hidden">
           <button
@@ -108,7 +111,9 @@ const Navbar = () => {
               className="relative cursor-pointer hover:text-green-500"
               onClick={() => handleProductClick('Products')}
             >
-              <NavLink to="#">Products <i className="fas fa-chevron-down ml-2"></i></NavLink>
+              <NavLink to="#">
+                Products <i className="fas fa-chevron-down ml-2"></i>
+              </NavLink>
               {activeProduct === 'Products' && (
                 <div className="pl-4 mt-2">
                   <ul className="space-y-2">
@@ -132,22 +137,7 @@ const Navbar = () => {
               <NavLink to="/contact_us">Contact Us</NavLink>
             </li>
             <li>
-              <div className="flex items-center w-full max-w-md mx-4">
-                <input
-                  className="w-full border border-gray-300 px-4 py-1 text-gray-400 outline-none focus:border-blue-500 transition duration-200"
-                  type="search"
-                  name="search"
-                  placeholder="Search..."
-                  aria-label="Search"
-                />
-                <button
-                  type="submit"
-                  className="m-2 rounded bg-blue-600 px-4 py-2 text-white"
-                  aria-label="Search button"
-                >
-                  <i className="fas fa-search"></i>
-                </button>
-              </div>
+              <SearchInput onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
             </li>
           </ul>
         </div>
