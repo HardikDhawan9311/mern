@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import axios from 'axios';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const ContactUs = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,14 +21,38 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    emailjs.send(
-      'service_rxuvce4',
-      'template_rlevnp9',
-      formData,
-      'GMj5gPJ63gLPjLadQ'
-    ).then((result) => {
+    try {
+      // Update field names to match server expectations
+      const requestData = {
+        username: formData.firstName,
+        email: formData.email,
+        phone_number: formData.phone,
+        company: formData.company,
+        message: formData.message
+      };
+  
+      console.log('Submitting form data:', requestData); // Log form data for debugging
+  
+      // Send form data to the backend
+      await axios.post('http://localhost:8080/users', requestData);
+  
+      // Send email using emailjs
+      await emailjs.send(
+        'service_07o5imd',
+        'template_ww9g9rb',
+        requestData,
+        'GMj5gPJ63gLPjLadQ'
+      );
+  
+      // Send confirmation email using Nodemailer
+      await axios.post('http://localhost:5000/send-email', {
+        to: requestData.email,
+        subject: 'Your Form Submission',
+        html: `<p>Thank you for your submission, ${requestData.username}</p><p>${requestData.message}</p>`
+      });
+  
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
@@ -38,11 +64,22 @@ const ContactUs = () => {
           message: ''
         });
       }, 5000);
-    }, (error) => {
-      console.error(error.text);
-    });
+    } catch (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error('Server responded with an error:', error.response.data);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error('No response received:', error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error('Error setting up request:', error.message);
+      }
+      setError('There was an error submitting the form. Please try again.');
+    }
   };
-
+  
   if (submitted) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -79,6 +116,7 @@ const ContactUs = () => {
             <h2 className="mb-14 font-bold text-4xl text-blue-900 relative before:block before:absolute before:bg-sky-300 before:content-[''] before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
               Enter your details
             </h2>
+            {error && <div className="mb-4 text-red-500">{error}</div>}
             <form onSubmit={handleSubmit}>
               <div className="grid gap-6 mb-6 grid-cols-2">
                 <div className="flex flex-col">
