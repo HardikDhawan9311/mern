@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/Images/logo.png';
-import SearchInput from './searchInput';
+
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -21,23 +21,15 @@ const Navbar = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleSearchFocus = () => {
-    setSearchActive(true);
-  };
 
-  const handleSearchBlur = () => {
-    setSearchActive(false);
-  };
 
   return (
     <header className="header top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" />
+        <a href="/"><img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" /></a>
       </div>
       <nav className="nav font-semibold text-lg flex-1 flex justify-end items-center relative z-20">
-        <div className="flex items-center w-full max-w-md mx-4">
-          <SearchInput onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
-        </div>
+        
         <div className={`hidden md:flex items-center space-x-4 transition-transform duration-300 ease-in-out ${isSearchActive ? 'transform -translate-x-64' : ''}`}>
           <div
             className="relative"
@@ -95,6 +87,31 @@ const Navbar = () => {
             Contact Us
           </NavLink>
         </div>
+        <div
+  className="p-5 overflow-hidden w-[60px] h-[60px] hover:w-[270px] bg-[#4070f4] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300"
+>
+  <div className="flex items-center justify-center fill-white">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="Isolation_Mode"
+      data-name="Isolation Mode"
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+    >
+      <path
+        d="M18.9,16.776A10.539,10.539,0,1,0,16.776,18.9l5.1,5.1L24,21.88ZM10.5,18A7.5,7.5,0,1,1,18,10.5,7.507,7.507,0,0,1,10.5,18Z"
+        fill="white"
+      ></path>
+    </svg>
+  </div>
+  <input
+    type="text"
+    className="outline-none text-[20px] bg-transparent w-full text-white font-normal px-4"
+    placeholder="Search"
+  />
+</div>
+
         <div className="flex items-center md:hidden">
           <button
             onClick={handleMobileMenuToggle}
