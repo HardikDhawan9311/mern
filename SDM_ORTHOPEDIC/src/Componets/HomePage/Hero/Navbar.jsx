@@ -100,7 +100,7 @@ const Navbar = () => {
   </div>
   <input
     type="text"
-    className="outline-none text-[18px] bg-transparent w-full text-white font-normal px-4"
+    className="outline-none text-[18px] bg-transparent w-full text-black font-normal px-4"
     placeholder="Search"
   />
 </div>

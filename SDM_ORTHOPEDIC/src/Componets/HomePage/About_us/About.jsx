@@ -22,7 +22,7 @@ function About() {
               <div className="items-center flex flex-wrap">
                 <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                   <div className="pr-12 ">
-                    <h1 id='heading' className="text-white font-semibold text-5xl">
+                    <h1 id='heading' className="text-white font-semibold text-5xl animate__animated animate__backInDown">
                       ABOUT US
                     </h1>
                     <div className="w-full h-15 px-4 text-center">
