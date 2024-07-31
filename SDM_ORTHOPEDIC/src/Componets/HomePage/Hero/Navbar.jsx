@@ -88,26 +88,19 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div
-  className="p-5 overflow-hidden w-[60px] h-[60px] hover:w-[270px] bg-[#4070f4] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300"
+  className="p-5 overflow-hidden w-[50px] h-[50px] hover:w-[210px] bg-[#FFFFFF] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300 mr-4" 
 >
-  <div className="flex items-center justify-center fill-white">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      id="Isolation_Mode"
-      data-name="Isolation Mode"
-      viewBox="0 0 24 24"
-      width="22"
-      height="22"
-    >
+  <div className="flex items-center justify-center fill-white  fa fa-search aria-hidden=true">
+    
       <path
         d="M18.9,16.776A10.539,10.539,0,1,0,16.776,18.9l5.1,5.1L24,21.88ZM10.5,18A7.5,7.5,0,1,1,18,10.5,7.507,7.507,0,0,1,10.5,18Z"
         fill="white"
       ></path>
-    </svg>
+    
   </div>
   <input
     type="text"
-    className="outline-none text-[20px] bg-transparent w-full text-white font-normal px-4"
+    className="outline-none text-[18px] bg-transparent w-full text-white font-normal px-4"
     placeholder="Search"
   />
 </div>
