@@ -94,8 +94,8 @@ const ContactUs = () => {
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
       <div className="bg-white max-w-4xl mx-auto w-full">
-        <div className="grid grid-cols-6 h-full">
-          <div className="bg-blue-900 p-10 col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-6 h-full">
+          <div className="bg-blue-900 p-10 lg:col-span-2">
             <h2 className="mb-10 font-bold text-2xl text-blue-100 relative before:block before:absolute before:bg-sky-300 before:content-[''] before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
               Contact Info
             </h2>
@@ -112,13 +112,13 @@ const ContactUs = () => {
               <span className="font-normal text-xs text-blue-300 block">sdmorthopedic@yahoo.com</span>
             </p>
           </div>
-          <div className="bg-blue-50 p-14 col-span-4">
+          <div className="bg-blue-50 p-14 lg:col-span-4">
             <h2 className="mb-14 font-bold text-4xl text-blue-900 relative before:block before:absolute before:bg-sky-300 before:content-[''] before:w-20 before:h-1 before:-skew-y-3 before:-bottom-4">
               Enter your details
             </h2>
             {error && <div className="mb-4 text-red-500">{error}</div>}
             <form onSubmit={handleSubmit}>
-              <div className="grid gap-6 mb-6 grid-cols-2">
+              <div className="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2">
                 <div className="flex flex-col">
                   <input
                     className="py-4 bg-white rounded-full px-6 placeholder:text-xs"
@@ -140,7 +140,7 @@ const ContactUs = () => {
                   />
                 </div>
               </div>
-              <div className="grid gap-6 mb-6 grid-cols-2">
+              <div className="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2">
                 <div className="flex flex-col">
                   <input
                     className="py-4 bg-white rounded-full px-6 placeholder:text-xs"

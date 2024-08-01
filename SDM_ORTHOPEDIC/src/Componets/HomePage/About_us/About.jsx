@@ -22,7 +22,7 @@ function About() {
               <div className="items-center flex flex-wrap">
                 <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                   <div className="pr-12 ">
-                    <h1 id='heading' className="text-white font-semibold text-5xl">
+                    <h1 id='heading' className="text-white font-semibold text-5xl animate__animated animate__backInDown">
                       ABOUT US
                     </h1>
                     <div className="w-full h-15 px-4 text-center">
@@ -158,7 +158,7 @@ function About() {
           <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={80} duration={2} />
+                <CountUp end={20} duration={2} />
               </b>
               <span className="text-xl font-semibold">+</span>
             </div>
