@@ -12,8 +12,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/" exact component={Api} />
+        <Route path="/product/:id" component={Product} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/contact_us" element={<Contact />} />
+
       </Routes>
     </BrowserRouter>
   );

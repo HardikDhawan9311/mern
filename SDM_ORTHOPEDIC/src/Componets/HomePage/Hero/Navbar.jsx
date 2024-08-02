@@ -85,11 +85,8 @@ const Navbar = () => {
         <div
           className="p-5 overflow-hidden w-[50px] h-[50px] hover:w-[210px] bg-[#FFFFFF] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300 mr-4" 
         >
-          <div className="flex items-center justify-center fill-white fa fa-search aria-hidden=true">
-            <path
-              d="M18.9,16.776A10.539,10.539,0,1,0,16.776,18.9l5.1,5.1L24,21.88ZM10.5,18A7.5,7.5,0,1,1,18,10.5,7.507,7.507,0,0,1,10.5,18Z"
-              fill="white"
-            ></path>
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white">
+            <i className="fas fa-search text-black mr-8"></i>
           </div>
           <input
             type="text"
