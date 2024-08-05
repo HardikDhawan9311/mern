@@ -240,6 +240,8 @@ import axios from 'axios';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Footer from './Componets/HomePage/Footer';
+import Navbar from './Componets/HomePage/Hero/Navbar';
 
 function Products1() {
   const [showForm, setShowForm] = useState(false);
@@ -323,7 +325,7 @@ function Products1() {
 
     try {
       await axios.post('http://localhost:1234/send-email', formData);
-      alert('Email sent successfully');
+      alert('Thanku for contacting us ');
     } catch (error) {
       console.error('Error sending email:', error);
       alert('Error sending email');
@@ -332,6 +334,7 @@ function Products1() {
   };
 
   return (
+    <><Navbar/>
     <div className="min-h-screen bg-white-100 p-6 flex flex-col items-center">
       <div>
           <h1 className="text-6xl text-center font-bold">{product.product_name}</h1>
@@ -463,6 +466,8 @@ function Products1() {
         )}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

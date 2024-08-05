@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from './Componets/HomePage/Hero/Navbar';
+import Footer from './Componets/HomePage/Footer';
 
 function API() {
   const [loading, setLoading] = useState(true);
@@ -61,6 +63,8 @@ function API() {
     setShowForm(false);
   };
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product) => (
@@ -153,6 +157,8 @@ function API() {
           </div>
         )}
     </div>
+    <Footer/>
+    </>
   );
 }
 
