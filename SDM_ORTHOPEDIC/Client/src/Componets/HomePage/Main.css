@@ -1,0 +1,100 @@
+.h-screen {
+    height: 100vh;
+  }
+  
+  .bg-gray-50 {
+    background-color: #f9fafb;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .bg-cover {
+    background-size: cover;
+  }
+  
+  .bg-center {
+    background-position: center;
+  }
+  
+  .py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
+  .text-5xl {
+    font-size: 3rem;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .text-xl {
+    font-size: 1.25rem;
+  }
+  
+  .mb-12 {
+    margin-bottom: 3rem;
+  }
+  
+  .bg-indigo-500 {
+    background-color: #6366f1;
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
+  .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .hover\:bg-indigo-600:hover {
+    background-color: #4f46e5;
+  }
+  
