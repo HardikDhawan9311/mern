@@ -32,7 +32,7 @@ const Navbar = () => {
             onMouseLeave={handleDropdownToggle}
           >
             <NavLink
-              to="#"
+              to="/product"
               className="p-4 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer flex items-center"
             >
               Products
@@ -110,7 +110,7 @@ const Navbar = () => {
               className="relative cursor-pointer hover:text-blue-700"
               onClick={() => handleProductClick('Products')}
             >
-              <NavLink to="#">
+              <NavLink to="/product">
                 Products <i className="fas fa-chevron-down ml-2"></i>
               </NavLink>
               {activeProduct === 'Products' && (
