@@ -65,23 +65,23 @@ function API() {
   return (
     <>
     <Navbar/>
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-grey-100 p-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <div key={product.id} className="mt-16 py-4 px-4 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 max-w-xs">
             <div className="w-sm">
               <img className="w-full h-40 object-cover mx-auto rounded-t-xl" src={product.image1} alt={product.product_name} />
-              <div className="mt-4 text-green-600 text-center">
+              <div className="mt-4 text-blue-600 text-center">
                 <h1 className="text-xl font-bold">{product.product_name}</h1>
-                <p className="mt-4 text-gray-600">{truncateText(product.product_info, 50)}</p>
+                <p className="mt-4 text-blue-600">{truncateText(product.product_info, 50)}</p>
                 <button 
-                  className="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200"
+                  className="mt-8 mb-4 py-2 px-14 rounded-full bg-blue-500 text-white tracking-widest hover:bg-blue-400 transition duration-200"
                   onClick={() => handleGetQuoteClick(product.product_id)}
                 >
                   Get a Quote
                 </button>
                 <Link to={`/products/${product.product_id}`}>
-                  <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
+                  <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-blue-500 text-white tracking-widest hover:bg-blue-400 transition duration-200">MORE</button>
                 </Link> 
               </div>
             </div>
