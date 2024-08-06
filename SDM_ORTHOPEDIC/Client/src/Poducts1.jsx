@@ -242,7 +242,8 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Footer from './Componets/HomePage/Footer';
 import Navbar from './Componets/HomePage/Hero/Navbar';
-
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 function Products1() {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -335,7 +336,7 @@ function Products1() {
 
   return (
     <><Navbar/>
-    <div className="min-h-screen bg-white-100 p-6 flex flex-col items-center">
+    {/* <div className="min-h-screen bg-white-100 p-6 flex flex-col items-center">
       <div>
           <h1 className="text-6xl text-center font-bold">{product.product_name}</h1>
           </div>
@@ -372,7 +373,52 @@ function Products1() {
           </div>
           </div>
         </div>
-       
+        */}
+        <div className="bg-[url('https://png.pngtree.com/thumb_back/fh260/background/20190223/ourmid/pngtree-blue-genetic-dna-medical-background-windbackground-display-boardbackgroundpsdcolorful-image_77077.jpg')] bg-cover bg-center min-h-screen flex flex-col items-center">
+      <h1 className="text-6xl font-bold text-center p-8 mb-8 relative mt-4">
+      {product.product_name}
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-6 h-2 w-16 bg-gray-300"></div>
+      </h1>
+      <div className="flex flex-col md:flex-row items-center justify-center w-full px-4">
+        <div className="flex justify-center w-full md:w-1/2 mb-8 md:mb-0 md:mr-4">
+          <Carousel
+            showThumbs={false}
+            infiniteLoop
+            useKeyboardArrows
+            className="w-full max-w-md border-4 border-gray-500 rounded-lg"
+          >
+             {availableImages.map((image, index) => (
+            <div key={index}>
+                <img 
+                  src={image} 
+                  alt={`img${index + 1}`} 
+                  // className="object-cover mt-20 border-solid border-3 rounded-lg shadow-md " 
+                   style={{ width: '450px', height: '450px'}}
+                />
+              </div>
+              ))}
+            
+          </Carousel>
+        </div>
+        <div className="flex flex-col justify-center w-full md:w-1/2">
+        <div>
+            <h2 className="text-4xl font-semibold mb-8 mt-8">Product Information</h2>
+            <p className="text-gray-700">
+            {product.product_info}
+            </p>
+            <div className='mt-8'>
+            <button
+              className="py-2 px-4 bg-blue-500 text-white rounded-full hover:bg-blue-400 transition duration-200"
+              onClick={() => setShowForm(true)}
+            >
+              Request a Quote
+            </button>
+          </div>
+          </div>
+        </div>
+      
+      
+
 
         {sizes.length > 0 && (
           <div className="md:col-span-12 flex justify-center mt-6">
