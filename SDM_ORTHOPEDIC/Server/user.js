@@ -62,36 +62,86 @@ app.get('/products/:productId/sizes', async (req, res) => {
 console.log('Email:', process.env.EMAIL); // Debugging
 console.log('Email Password:', process.env.EMAIL_PASSWORD); // Debugging
 console.log('Owner Email:', process.env.OWNER_EMAIL); // Debugging
-
 app.post('/send-email', async (req, res) => {
   const { name, email, phone, productId } = req.body;
   if (!name || !email || !phone || !productId) {
     return res.status(400).send('All fields are required');
   }
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL, // Your email
-      pass: process.env.EMAIL_PASSWORD // Your email password
-    }
-  });
-
-  const mailOptions = {
-    from: process.env.EMAIL,
-    to: process.env.OWNER_EMAIL, // Recipient email (your email)
-    subject: 'New Quote Request',
-    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProduct ID: ${productId}`
-  };
-
 
   try {
-    await transporter.sendMail(mailOptions);
-    res.status(200).send('Email sent successfully');
+    // Fetch product details for all available sizes from the 'prices' table
+    const [productRows] = await pool1.execute(
+      'SELECT product_name, product_size, price FROM prices WHERE product_id = ?',
+      [productId]
+    );
+
+    if (productRows.length === 0) {
+      return res.status(404).send('Product not found');
+    }
+
+    // Assuming product_name is the same for all sizes, so we take it from the first row
+    const productName = productRows[0].product_name;
+
+    // Format sizes and prices for email
+    const sizePriceDetails = productRows.map(row => `Size: ${row.product_size}, Price:Rs ${row.price}`).join('\n');
+
+    // Configure email transport
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL, // Your email
+        pass: process.env.EMAIL_PASSWORD // Your email password
+      }
+    });
+
+    // Email to the user with product details
+    const userMailOptions = {
+      from: process.env.EMAIL,
+      to: email,
+      subject: `Product Details for ${productName}`,
+      text: `Hello ${name},
+
+Here are the details of the product you requested:
+
+Product Name: ${productName}
+Available Sizes and Prices:
+${sizePriceDetails}
+
+Thank you for your interest.
+
+Best regards,
+SDM Orthpaedic`
+    };
+
+    // Email to the owner with user's details and product details
+    const ownerMailOptions = {
+      from: process.env.EMAIL,
+      to: process.env.OWNER_EMAIL, // Your email
+      subject: 'New Product Inquiry',
+      text: `A new inquiry has been received.
+
+User Details:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Requested Product Details:
+Product Name: ${productName}
+Available Sizes and Prices:
+${sizePriceDetails}`
+    };
+
+    // Send both emails
+    await transporter.sendMail(userMailOptions);
+    await transporter.sendMail(ownerMailOptions);
+    res.status(200).send('Emails sent successfully');
   } catch (error) {
     console.error('Error sending email:', error);
     res.status(500).send('Error sending email: ' + error.message);
   }
 });
+
+
 
 app.post('/submit-form', (req, res) => {
   const { name, email, phone, productId } = req.body;
