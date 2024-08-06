@@ -71,9 +71,9 @@ function API() {
           <div key={product.id} className="mt-16 py-4 px-4 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 max-w-xs">
             <div className="w-sm">
               <img className="w-full h-40 object-cover mx-auto rounded-t-xl" src={product.image1} alt={product.product_name} />
-              <div className="mt-4 text-blue-600 text-center">
+              <div className="mt-4 text-black-600 text-center">
                 <h1 className="text-xl font-bold">{product.product_name}</h1>
-                <p className="mt-4 text-blue-600">{truncateText(product.product_info, 50)}</p>
+                <p className="mt-4 text-black-600">{truncateText(product.product_info, 50)}</p>
                 <button 
                   className="mt-8 mb-4 py-2 px-14 rounded-full bg-blue-500 text-white tracking-widest hover:bg-blue-400 transition duration-200"
                   onClick={() => handleGetQuoteClick(product.product_id)}
