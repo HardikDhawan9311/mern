@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import axios from 'axios';
 
 const ContactUs = () => {
@@ -24,7 +23,6 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Update field names to match server expectations
       const requestData = {
         username: formData.firstName,
         email: formData.email,
@@ -32,27 +30,33 @@ const ContactUs = () => {
         company: formData.company,
         message: formData.message
       };
-  
+
       console.log('Submitting form data:', requestData); // Log form data for debugging
-  
+
       // Send form data to the backend
-      await axios.post('http://localhost:8080/users', requestData);
-  
-      // Send email using emailjs
-      await emailjs.send(
-        'service_07o5imd',
-        'template_ww9g9rb',
-        requestData,
-        'GMj5gPJ63gLPjLadQ'
-      );
-  
+      // await axios.post('http://localhost:8080/users', requestData);
+
       // Send confirmation email using Nodemailer
       await axios.post('http://localhost:5000/send-email', {
         to: requestData.email,
         subject: 'Your Form Submission',
-        html: `<p>Thank you for your submission, ${requestData.username}</p><p>${requestData.message}</p>`
+        text: `Thank you for your submission, ${requestData.username}\n${requestData.message}`
       });
-  
+
+      // Send email to your account with all form data
+      await axios.post('http://localhost:5000/send-email', {
+        to: 'arshdeepsinghgaidu725@gmail.com',
+        subject: 'New Form Submission',
+        text: `
+          New submission received with the following details:
+          Name: ${requestData.username}
+          Email: ${requestData.email}
+          Phone Number: ${requestData.phone_number}
+          Company: ${requestData.company}
+          Message: ${requestData.message}
+        `
+      });
+
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
@@ -66,20 +70,16 @@ const ContactUs = () => {
       }, 5000);
     } catch (error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
         console.error('Server responded with an error:', error.response.data);
       } else if (error.request) {
-        // The request was made but no response was received
         console.error('No response received:', error.request);
       } else {
-        // Something happened in setting up the request that triggered an Error
         console.error('Error setting up request:', error.message);
       }
       setError('There was an error submitting the form. Please try again.');
     }
   };
-  
+
   if (submitted) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -90,7 +90,6 @@ const ContactUs = () => {
       </div>
     );
   }
-
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
       <div className="bg-white max-w-4xl mx-auto w-full">
