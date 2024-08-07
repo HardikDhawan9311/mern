@@ -29,11 +29,22 @@ const Navbar = () => {
       </div>
       <nav className="nav font-semibold text-lg flex-1 flex justify-end items-center relative z-20">
         <div className={`hidden md:flex items-center space-x-4 transition-transform duration-300 ease-in-out`}>
+         <div>
+         <NavLink
+            to="/"
+            className="p-4 border-b-2 border-blue-700 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer"
+          >
+            <i className="fa fa-home" aria-hidden="true"></i>
+          </NavLink>
+         </div>
+         
           <div
             className="relative"
             onMouseEnter={handleDropdownToggle}
             onMouseLeave={handleDropdownToggle}
           >
+            
+
             <NavLink
               to="/product"
               className="p-4 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer flex items-center"
