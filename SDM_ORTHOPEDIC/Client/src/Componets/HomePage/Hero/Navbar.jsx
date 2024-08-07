@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/Images/logo.png';
+import SearchBar from './SearchBar';
+import { SearchResultsList } from './SearchResultList';
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [results, setResults] = useState([]);
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -39,12 +42,12 @@ const Navbar = () => {
               <i className="fas fa-chevron-down ml-2"></i>
             </NavLink>
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded border border-gray-200 z-50 ">
-                <ul className="flex space-x-4 p-4 ">
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded border border-gray-200 z-50">
+                <ul className="flex space-x-4 p-4">
                   {['Product 1', 'Product 2', 'Product 3'].map((product) => (
                     <li
                       key={product}
-                      className="relative cursor-pointer hover:text-blue-700 whitespace-nowrap "
+                      className="relative cursor-pointer hover:text-blue-700 whitespace-nowrap"
                       onClick={() => handleProductClick(product)}
                     >
                       <NavLink to="#">{product}</NavLink>
@@ -57,7 +60,7 @@ const Navbar = () => {
                             <li className="cursor-pointer hover:text-blue-700 whitespace-nowrap overflow-hidden text-ellipsis">
                               <NavLink to="#">Subproduct 2</NavLink>
                             </li>
-                            <li className="cursor-pointer hover:text-blue-700 ">
+                            <li className="cursor-pointer hover:text-blue-700">
                               <NavLink to="#">Subproduct 3</NavLink>
                             </li>
                           </ul>
@@ -82,17 +85,9 @@ const Navbar = () => {
             Contact Us
           </NavLink>
         </div>
-        <div
-          className="p-5 overflow-hidden w-[50px] h-[50px] hover:w-[210px] bg-[#FFFFFF] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300 mr-4" 
-        >
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white">
-            <i className="fas fa-search text-black mr-8"></i>
-          </div>
-          <input
-            type="text"
-            className="outline-none text-[18px] bg-transparent w-full text-black font-normal px-4"
-            placeholder="Search"
-          />
+        <div className="relative">
+          <SearchBar setResults={setResults} />
+          {results && results.length > 0 && <SearchResultsList results={results}/>}
         </div>
         <div className="flex items-center md:hidden">
           <button
