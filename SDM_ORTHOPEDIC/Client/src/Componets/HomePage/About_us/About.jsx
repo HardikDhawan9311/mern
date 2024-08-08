@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState,useRef } from 'react';
 import 'animate.css';
 import './About.css'
 import AOS from "aos";
@@ -21,14 +21,44 @@ import certificate2 from '../../../assets/Images/certificate2.jpg';
 // import image8 from '../../../assets/Images/image1.jpg';
 // import image9 from '../../../assets/Images/image1.jpg';
 
+// const About = () => {
+//   useEffect(() => {
+//     AOS.init({
+//       disable: "phone",
+//       duration: 800,
+//       easing: "ease-out-cubic",
+//     });
 const About = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
-    AOS.init({
-      disable: "phone",
-      duration: 800,
-      easing: "ease-out-cubic",
-    });
+    AOS.init({ duration: 1000 });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing after it's visible
+        }
+      },
+      { threshold: 0.1 } // Adjust this value if needed
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
+  
+
+
+  
 
 
   return (
@@ -276,7 +306,7 @@ const About = () => {
       </div>
     
 
-      <section className="section-counter py-12 bg-gray-100">
+      {/* <section className="section-counter py-12 bg-gray-100">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="single-counter flex flex-col items-center bg-white p-6 rounded-lg shadow-md"data-aos="fade-up">
             <div className="inner flex items-baseline">
@@ -308,7 +338,60 @@ const About = () => {
             <p className="mt-2 text-center text-gray-700">Satisfied Clients</p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<section
+      className="section-counter py-12 bg-gray-100"
+      ref={sectionRef}
+    >
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div
+          className="single-counter flex flex-col items-center bg-white p-6 rounded-lg shadow-md"
+          data-aos="fade-up"
+        >
+          <div className="inner flex items-baseline">
+            <b className="counter text-4xl font-bold">
+              {isVisible && (
+                <CountUp end={20} duration={5} />
+              )}
+            </b>
+            <span className="text-xl font-semibold">+</span>
+          </div>
+          <p className="mt-2 text-center text-gray-700">Years of Excellence</p>
+        </div>
+
+        <div
+          className="single-counter flex flex-col items-center bg-white p-6 rounded-lg shadow-md"
+          data-aos="fade-up"
+        >
+          <div className="inner flex items-baseline">
+            <b className="counter text-4xl font-bold">
+              {isVisible && (
+                <CountUp end={19} duration={5} />
+              )}
+            </b>
+            <span className="text-xl font-semibold">k+</span>
+          </div>
+          <p className="mt-2 text-center text-gray-700">Products</p>
+        </div>
+
+        <div
+          className="single-counter flex flex-col items-center bg-white p-6 rounded-lg shadow-md"
+          data-aos="fade-up"
+        >
+          <div className="inner flex items-baseline">
+            <b className="counter text-4xl font-bold">
+              {isVisible && (
+                <CountUp end={100} duration={5} />
+              )}
+            </b>
+            <span className="text-xl font-semibold">%</span>
+          </div>
+          <p className="mt-2 text-center text-gray-700">Satisfied Clients</p>
+        </div>
+      </div>
+    </section>
+
 
       <Footer />
     </>
