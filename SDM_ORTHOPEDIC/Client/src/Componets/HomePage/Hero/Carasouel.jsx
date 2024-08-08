@@ -39,14 +39,14 @@ function Carasouel() {
   return (
     <div >
       <OwlCarousel className='owl-theme' {...options}>
-    <div class='item' className='h-auto w-full'>
-        <h4><img src="https://img.freepik.com/premium-photo/spine-surgical-treatment-concept-doctor-with-tool-is-showing-spine_646443-1526.jpg?w=740" alt="img1" /></h4>
+    <div  >
+        <h4><img src="https://img.freepik.com/premium-photo/spine-surgical-treatment-concept-doctor-with-tool-is-showing-spine_646443-1526.jpg?w=740" alt="img1"  style={{ width: '500', height: '630px'}}/></h4>
     </div>
-    <div class='item' className='h-auto w-full'>
-        <h4><img src="https://img.freepik.com/premium-vector/medical-technology_46706-939.jpg?w=740" alt="img2" /></h4>
+    <div  >
+        <h4><img src="https://img.freepik.com/premium-vector/medical-technology_46706-939.jpg?w=740" alt="img2" style={{ width: '500', height: '630px'}} /></h4>
     </div>
-    <div class='item' className='h-auto w-full'>
-        <h4><img src="https://img.freepik.com/premium-photo/arthroscope-surgery-orthopedic-surgeons-teamwork-operating-room-with-modern-arthroscopic-tools-knee-surgery_179755-1979.jpg" alt="img3" /></h4>
+    <div  >
+        <h4><img src="https://img.freepik.com/premium-photo/arthroscope-surgery-orthopedic-surgeons-teamwork-operating-room-with-modern-arthroscopic-tools-knee-surgery_179755-1979.jpg" alt="img3"  style={{ width: '500', height: '630px'}}/></h4>
     </div>
 </OwlCarousel>;
     </div>

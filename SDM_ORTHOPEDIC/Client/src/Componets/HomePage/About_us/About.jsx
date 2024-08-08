@@ -52,7 +52,7 @@ const About = () => {
         </div>
       </section>
     
-<section className="pb-10 bg-blueGray-200">
+<section className="pb-10 ">
 
 
   
@@ -65,7 +65,7 @@ const About = () => {
             alt="image1" 
             className="w-full md:w-1/2 rounded-lg shadow-md m-3" 
           />
-         <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3" data-aos="fade-right">
+         <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300 bg-white  rounded-lg shadow-lg p-6 m-3" data-aos="fade-right">
             <h6 className="text-2xl font-semibold">Our Mission</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
               At SDM Orthopaedic, our mission is to enhance the quality of life for patients by providing advanced orthopedic solutions. We strive to deliver products that meet the highest standards of safety, efficacy, and reliability.
@@ -84,7 +84,7 @@ const About = () => {
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start">
           
-        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40" data-aos="fade-left">
+        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40 bg-white" data-aos="fade-left">
             <h6 className="text-2xl font-semibold">Our Vision</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             We envision a future where everyone has access to state-of-the-art orthopedic care. Through continuous research, development, and collaboration with the medical community, we aim to set new benchmarks in orthopedic manufacturing.
@@ -107,10 +107,10 @@ const About = () => {
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start mt-20">
           <img 
-            src="" 
+            src="https://plus.unsplash.com/premium_photo-1664304334372-3ae5f0bc6665?q=80&w=1993&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
             className="w-full md:w-1/2 rounded-lg shadow-md m-3" 
           />
-          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3" data-aos="fade-right">
+          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 bg-white" data-aos="fade-right">
             <h6 className="text-2xl font-semibold">Verified Company</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             We envision a future where everyone has access to state-of-the-art orthopedic care. Through continuous research, development, and collaboration with the medical community, we aim to set new benchmarks in orthopedic manufacturing.
@@ -127,7 +127,7 @@ const About = () => {
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start">
           
-        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40" data-aos="fade-left">
+        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40 bg-white" data-aos="fade-left">
             <h6 className="text-2xl font-semibold">Quality Assurance</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             Quality is at the heart of everything we do. Our manufacturing unit is equipped with the latest technology and adheres to stringent quality control processes. Each product undergoes rigorous testing to ensure it meets international standards.
@@ -135,7 +135,7 @@ const About = () => {
             
           </div>
           <img 
-            src=""
+            src="https://img.freepik.com/premium-photo/asian-student-learning-with-human-bone-spinal-nerve-model-anatomy-biology-classroom-hig_622428-10183.jpg"
             alt="image1" 
             className="w-full md:w-1/2 rounded-lg right-4 absolute shadow-md m-3" 
           />
@@ -150,11 +150,11 @@ const About = () => {
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start mt-20">
           <img 
-            src=""
+            src="https://img.freepik.com/free-photo/medic-holding-tray-instruments_23-2149299306.jpg"
             alt="image1" 
             className="w-full md:w-1/2 rounded-lg shadow-md m-3" 
           />
-          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3" data-aos="fade-right">
+          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 bg-white" data-aos="fade-right">
             <h6 className="text-2xl font-semibold">Our Products</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             We offer a comprehensive range of orthopedic implants and instruments:\nJoint Replacement Implants\nTrauma Implants\nSpinal Implants\nOrthopedic Surgical Instruments
@@ -171,7 +171,7 @@ const About = () => {
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start">
           
-        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40" data-aos="fade-left">
+        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40 bg-white" data-aos="fade-left">
             <h6 className="text-2xl font-semibold">Pan India Presence</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             With a robust distribution network, we supply our products to hospitals, clinics, and medical institutions across the length and breadth of India. Our dedicated team ensures timely delivery and exceptional after-sales support.
@@ -179,7 +179,7 @@ const About = () => {
             
           </div>
           <img 
-            src=""
+            src="https://img.freepik.com/free-photo/front-view-doctor-holding-radiography_23-2150165471.jpg"
             alt="image1" 
             className="w-full md:w-1/2 rounded-lg right-4 absolute shadow-md m-3" 
           />
@@ -195,11 +195,11 @@ const About = () => {
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start mt-20">
           <img 
-            src=""
+            src="https://img.freepik.com/free-photo/doctors-doing-surgical-procedure-patient_23-2148962500.jpg"
             alt="image1" 
             className="w-full md:w-1/2 rounded-lg shadow-md m-3" 
           />
-          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3" data-aos="fade-right">
+          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 bg-white" data-aos="fade-right">
             <h6 className="text-2xl font-semibold">Innovation and Research</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             Innovation drives us forward. Our research and development team works tirelessly to bring cutting-edge solutions to the market, keeping pace with the evolving needs of the orthopedic industry.
@@ -216,7 +216,7 @@ const About = () => {
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start">
           
-        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40" data-aos="fade-left">
+        <div className="relative left-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 z-40 bg-white" data-aos="fade-left">
             <h6 className="text-2xl font-semibold">Commitment to Sustainability</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             We are committed to sustainable practices in our manufacturing processes. By minimizing waste and optimizing resource use, we contribute to a healthier planet while delivering top-notch products to our customers.
@@ -224,7 +224,7 @@ const About = () => {
             
           </div>
           <img 
-            src=""
+            src="https://img.freepik.com/premium-photo/doctor-explaining-anatomical-spine-his-patient_13339-123225.jpg?w=996"
             alt="image1" 
             className="w-full md:w-1/2 rounded-lg right-4 absolute shadow-md m-3" 
           />
@@ -235,16 +235,16 @@ const About = () => {
 
 
 
-  <div className="container mx-auto mt-20 px-4">
+  {/* <div className="container mx-auto mt-20 px-4">
     <div className="flex flex-wrap">
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start mt-20">
           <img 
-            src=""
+            src="https://img.freepik.com/premium-photo/doctor-is-holding-knee-it-is-red-swollen_248459-40454.jpg?w=1060"
             alt="image1" 
             className="w-full md:w-1/2 rounded-lg shadow-md m-3" 
           />
-          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3" data-aos="fade-right">
+          <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 bg-white" data-aos="fade-right">
             <h6 className="text-2xl font-semibold">Our Team</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
             Our success is driven by a talented team of professionals, including engineers, scientists, and healthcare experts. Their dedication and expertise enable us to maintain our reputation as a trusted partner in orthopedic care.
@@ -253,7 +253,7 @@ const About = () => {
         </div>
       </div>
     </div>
-    </div>
+    </div> */}
 
 </section>
 
@@ -262,8 +262,8 @@ const About = () => {
         <div className="bg-gray-100 p-4 border-b border-gray-200">
           <h3 className="text-lg font-semibold">Certifications</h3>
         </div>
-        <div className="flex justify-left p-4">
-  <div className="flex justify-left h-auto w-1/3">
+        <div className="flex justify-center p-4">
+  <div className="flex justify-center h-auto w-1/3">
     <img src={certificate1} alt="Certificate 1" className="object-contain p-8 shadow-lg" />
   </div>
   <div className="flex justify-end h-auto w-1/3">
