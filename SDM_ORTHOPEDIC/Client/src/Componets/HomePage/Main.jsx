@@ -53,7 +53,7 @@ export default function Main() {
           <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={19} duration={2} />
+                <CountUp end={2} duration={2} />
               </b>
               <span className="text-xl font-semibold">k+</span>
             </div>
