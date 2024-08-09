@@ -321,7 +321,9 @@ const About = () => {
           <div className="single-counter flex flex-col items-center bg-white p-6 rounded-lg shadow-md"data-aos="fade-up">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={19} duration={5} />
+
+                <CountUp end={2} duration={2} />
+
               </b>
               <span className="text-xl font-semibold">k+</span>
             </div>

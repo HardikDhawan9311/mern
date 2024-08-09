@@ -59,6 +59,28 @@ app.get('/products/:productId/sizes', async (req, res) => {
     res.status(500).json({ error: 'An error occurred while fetching the sizes.', details: err.message });
   }
 });
+// Updated route to group products by their categories
+app.get("/categories", async (req, res) => {
+  try {
+    const [products] = await pool1.query("SELECT * FROM products");
+
+    // Group products by their category
+    const categories = products.reduce((acc, product) => {
+      const { product_category } = product;
+      if (!acc[product_category]) {
+        acc[product_category] = [];
+      }
+      acc[product_category].push(product);
+      return acc;
+    }, {});
+
+    res.status(200).json(categories);
+  } catch (err) {
+    console.error("Error executing query", err.stack);
+    res.status(500).json({ error: "An error occurred while fetching categories.", details: err.message });
+  }
+});
+
 console.log('Email:', process.env.EMAIL); // Debugging
 console.log('Email Password:', process.env.EMAIL_PASSWORD); // Debugging
 console.log('Owner Email:', process.env.OWNER_EMAIL); // Debugging
