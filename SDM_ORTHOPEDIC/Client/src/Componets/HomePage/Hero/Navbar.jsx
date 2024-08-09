@@ -42,6 +42,7 @@ const Navbar = () => {
       </div>
       <nav className="nav font-semibold text-lg flex-1 flex justify-end items-center relative z-20">
         <div className={`hidden md:flex items-center space-x-4 transition-transform duration-300 ease-in-out`}>
+
           <NavLink
             to="/about"
             className="p-4 border-b-2 border-blue-700 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer"
@@ -55,11 +56,14 @@ const Navbar = () => {
             Contact Us
           </NavLink>
 
+
           <div
             className="relative"
             onMouseEnter={handleDropdownToggle}
             onMouseLeave={handleDropdownToggle}
           >
+            
+
             <NavLink
               to="/product"
               className="p-4 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer flex items-center"
@@ -67,6 +71,7 @@ const Navbar = () => {
               Products
               <i className="fas fa-chevron-down ml-2"></i>
             </NavLink>
+
             {isDropdownOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-md border border-gray-200 z-50">
                 <ul className="flex flex-col p-2">
@@ -85,10 +90,11 @@ const Navbar = () => {
                         ))}
                       </ul>
                     </li>
+
                   ))}
                 </ul>
               </div>
-            )}
+            )} */}
           </div>
         </div>
 

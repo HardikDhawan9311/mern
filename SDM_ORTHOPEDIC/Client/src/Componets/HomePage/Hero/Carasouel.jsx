@@ -4,9 +4,7 @@ import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 
-import img1 from '../../../assets/Images/image1.jpg'
-// import img2 from '../../assets/Images/image2.jpg'
-import img3 from '../../../assets/Images/image3.jpg'
+
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 function Carasouel() {
 
@@ -39,13 +37,16 @@ function Carasouel() {
   };
 
   return (
-    <div>
+    <div >
       <OwlCarousel className='owl-theme' {...options}>
-    <div class='item'>
-        <h4><img src={img1} alt="img1" /></h4>
+    <div  >
+        <h4><img src="https://img.freepik.com/premium-photo/spine-surgical-treatment-concept-doctor-with-tool-is-showing-spine_646443-1526.jpg?w=740" alt="img1"  style={{ width: '500', height: '630px'}}/></h4>
     </div>
-    <div class='item'>
-        <h4><img src={img3} alt="img3" /></h4>
+    <div  >
+        <h4><img src="https://img.freepik.com/premium-vector/medical-technology_46706-939.jpg?w=740" alt="img2" style={{ width: '500', height: '630px'}} /></h4>
+    </div>
+    <div  >
+        <h4><img src="https://img.freepik.com/premium-photo/arthroscope-surgery-orthopedic-surgeons-teamwork-operating-room-with-modern-arthroscopic-tools-knee-surgery_179755-1979.jpg" alt="img3"  style={{ width: '500', height: '630px'}}/></h4>
     </div>
 </OwlCarousel>;
     </div>
