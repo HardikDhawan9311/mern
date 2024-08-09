@@ -17,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact_us" element={<Contact />} />
         <Route path="/product" element={<API />} />
+      
         <Route path="/products/:id" element={<Products1 />} />
       </Routes>
     </Router>
