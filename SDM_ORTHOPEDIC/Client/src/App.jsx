@@ -6,6 +6,7 @@ import About from './Componets/HomePage/About_us/About';
 import Contact from './Componets/HomePage/Contact_us/Contact';
 import API from './Api';
 import Products1 from './Poducts1';
+import ChatbotButton from './Componets/chatbot/Chatbutton';
 
 
 
@@ -20,6 +21,7 @@ function App() {
       
         <Route path="/products/:id" element={<Products1 />} />
       </Routes>
+      <ChatbotButton/>
     </Router>
   
   );
