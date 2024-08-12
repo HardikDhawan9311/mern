@@ -1,0 +1,14 @@
+@media (max-width: 767px) {
+  .flex-col {
+    flex-direction: column !important; /* Ensure it forces column direction */
+  }
+
+  .absolute {
+    position: static !important; /* Reset absolute positioning */
+    margin-top: 20px !important; /* Add margin to separate elements */
+  }
+
+  .relative {
+    position: relative !important; /* Ensure relative positioning */
+  }
+}
