@@ -1,14 +1,17 @@
 
- import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import axios from 'axios';
 import logo from '../../../assets/Images/logo.png';
+import SearchBar from './SearchBar';
+import { SearchResultsList } from './SearchResultList';
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [categories, setCategories] = useState({});
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -94,19 +97,13 @@ const Navbar = () => {
                   ))}
                 </ul>
               </div>
-            )} */}
+            )}
           </div>
         </div>
 
-        <div className="p-5 overflow-hidden w-[50px] h-[50px] hover:w-[210px] bg-[#FFFFFF] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300 mr-4">
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white">
-            <i className="fas fa-search text-black mr-8"></i>
-          </div>
-          <input
-            type="text"
-            className="outline-none text-[18px] bg-transparent w-full text-black font-normal px-4"
-            placeholder="Search"
-          />
+        <div className="relative">
+          <SearchBar setResults={setResults} />
+          {results && results.length > 0 && <SearchResultsList results={results}/>}
         </div>
 
         <div className="flex items-center md:hidden">
