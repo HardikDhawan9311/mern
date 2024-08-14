@@ -3,10 +3,12 @@
 import { NavLink, Link } from 'react-router-dom';
 import axios from 'axios';
 import logo from '../../../assets/Images/logo.png';
+import SearchBar from './SearchBar';
+import { SearchResultsList } from './SearchResultList';
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [activeProduct, setActiveProduct] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [categories, setCategories] = useState({});
 
@@ -27,36 +29,41 @@ const Navbar = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  const handleProductClick = (product) => {
-    setActiveProduct(activeProduct === product ? null : product);
+  const handleCategoryClick = (category) => {
+    setActiveCategory(activeCategory === category ? null : category);
+    setShowAllSubcategories({});
   };
 
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleMoreClick = (categoryName) => {
+    setShowAllSubcategories((prevState) => ({
+      ...prevState,
+      [categoryName]: true,
+    }));
+  };
+
+  const handleProductClick = (product) => {
+    console.log(`Product clicked: ${product.product_name}`);
+    // Add additional logic as needed
+  };
+
   return (
-    <header className="header top-0 bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
+    <header className="bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
       <div className="flex items-center">
         <a href="/"><img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" /></a>
       </div>
-      <nav className="nav font-semibold text-lg flex-1 flex justify-end items-center relative z-20">
+      <nav className="font-semibold text-lg flex-1 flex justify-end items-center">
         <div className={`hidden md:flex items-center space-x-4 transition-transform duration-300 ease-in-out`}>
-
-          <NavLink
-            to="/about"
+        <NavLink
+            to="/"
             className="p-4 border-b-2 border-blue-700 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer"
           >
-            About Us
+            <i class="fa fa-home" aria-hidden="true"></i>
           </NavLink>
-          <NavLink
-            to="/contact_us"
-            className="p-4 border-b-2 border-blue-700 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer"
-          >
-            Contact Us
-          </NavLink>
-
-
+          
           <div
             className="relative"
             onMouseEnter={handleDropdownToggle}
@@ -96,17 +103,24 @@ const Navbar = () => {
               </div>
             )} 
           </div>
+          <NavLink
+            to="/contact_us"
+            className="p-4 border-b-2 border-blue-700 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer"
+          >
+            Contact Us
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className="p-4 border-b-2 border-blue-700 border-opacity-0 hover:border-opacity-100 hover:text-blue-700 duration-200 cursor-pointer"
+          >
+            About Us
+          </NavLink>
         </div>
 
-        <div className="p-5 overflow-hidden w-[50px] h-[50px] hover:w-[210px] bg-[#FFFFFF] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300 mr-4">
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white">
-            <i className="fas fa-search text-black mr-8"></i>
-          </div>
-          <input
-            type="text"
-            className="outline-none text-[18px] bg-transparent w-full text-black font-normal px-4"
-            placeholder="Search"
-          />
+        <div className="relative">
+          <SearchBar setResults={setResults} />
+          {results && results.length > 0 && <SearchResultsList results={results}/>}
         </div>
 
         <div className="flex items-center md:hidden">
@@ -120,20 +134,20 @@ const Navbar = () => {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-md border border-gray-200 z-50 md:hidden">
+        <div className="absolute top-0 left-0 w-full bg-white shadow-lg rounded-md border border-gray-200 z-50 md:hidden">
           <ul className="space-y-2 p-4">
             <li
               className="relative cursor-pointer hover:text-blue-700"
-              onClick={() => handleProductClick('Products')}
+              onClick={() => handleCategoryClick('Products')}
             >
               <NavLink to="/product">
                 Products <i className="fas fa-chevron-down ml-2"></i>
               </NavLink>
-              {activeProduct === 'Products' && (
+              {activeCategory === 'Products' && (
                 <div className="pl-4 mt-4">
                   <ul className="space-y-2">
                     {Object.keys(categories).map((categoryName) => (
-                      <li key={categoryName} className="relative cursor-pointer hover:text-blue-700">
+                      <li key={categoryName} className="relative cursor-pointer hover:text-green-700">
                         {categoryName}
                         <ul className="mt-2 pl-4">
                           {categories[categoryName].map((product) => (

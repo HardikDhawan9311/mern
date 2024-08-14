@@ -395,76 +395,149 @@ function Products1() {
     
   };
 
-  return (  
+//   return (  
+//     <>
+//       <Navbar />
+//       <div className="bg-cover bg-center min-h-screen flex flex-col items-center" style={{ backgroundImage: `url(${image5})` }}>
+//         <h1 className="text-6xl font-bold text-center p-8 mb-2 relative mt-4">
+//           {product.product_name}
+//           <div className="absolute left-1/2 transform -translate-x-1/2 mt-6 h-2 w-16 bg-gray-300"></div>
+//         </h1>
+//         <div className="flex flex-col md:flex-row items-center justify-center w-full px-4">
+//           <div className="flex justify-center w-full md:w-1/2 md:mb-0 md:mr-4">
+//             <Carousel
+//               showThumbs={false}
+//               infiniteLoop
+//               useKeyboardArrows
+//               className="w-full max-w-md border-4 border-gray-500 rounded-lg"
+//             >
+//               {availableImages.map((image, index) => (
+//                 <div key={index}>
+//                   <img
+//                     src={image}
+//                     alt={`img${index + 1}`}
+//                     style={{ width: '450px', height: '450px' }}
+//                   />
+//                 </div>
+//               ))}
+//             </Carousel>
+//           </div>
+
+//           <div className="flex flex-col justify-center w-full md:w-1/2">
+//             <div>
+//               <h2 className="text-4xl font-semibold mb-8">Product Information</h2>
+//               <p className="text-gray-700">
+//                 {product.product_info}
+//               </p>
+//               <div className='mt-8'>
+//                 <button
+//                   className="py-2 px-4 bg-blue-500 text-white rounded-full hover:bg-blue-400 transition duration-200"
+//                   onClick={() => setShowForm(true)}
+//                 >
+//                   Request a Quote
+//                 </button>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {sizes.length > 0 && (
+//           <div className="justify-center mt-6">
+//             <div className="w-full bg-white p-4 rounded-xl shadow-lg">
+//               <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
+//                 <thead>
+//                   <tr>
+//                     <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
+//                       Sizes Available
+//                     </th>
+//                   </tr>
+//                 </thead>
+//                 <tbody className="bg-white divide-y divide-gray-200">
+//                   {sizes.map((size, index) => (
+//                     <tr key={index}>
+//                       <td className="px-6 py-4 whitespace-nowrap border-b border-gray-300">{size.product_size}</td>
+//                     </tr>
+//                   ))}
+//                 </tbody>
+//               </table>
+//             </div>
+//           </div>
+//         )}
+
+  return (
     <>
-      <Navbar />
-      <div className="bg-cover bg-center min-h-screen flex flex-col items-center" style={{ backgroundImage: `url(${image5})` }}>
-        <h1 className="text-6xl font-bold text-center p-8 mb-2 relative mt-4">
-          {product.product_name}
-          <div className="absolute left-1/2 transform -translate-x-1/2 mt-6 h-2 w-16 bg-gray-300"></div>
-        </h1>
-        <div className="flex flex-col md:flex-row items-center justify-center w-full px-4">
-          <div className="flex justify-center w-full md:w-1/2 md:mb-0 md:mr-4">
-            <Carousel
-              showThumbs={false}
-              infiniteLoop
-              useKeyboardArrows
-              className="w-full max-w-md border-4 border-gray-500 rounded-lg"
-            >
-              {availableImages.map((image, index) => (
-                <div key={index}>
-                  <img
-                    src={image}
-                    alt={`img${index + 1}`}
-                    style={{ width: '450px', height: '450px' }}
-                  />
-                </div>
-              ))}
-            </Carousel>
-          </div>
+    <div className="min-h-screen bg-gray-100 text-gray-900 relative overflow-hidden">
+  {/* Geometric Background */}
+  <div className="absolute inset-0 z-0 bg-gradient-to-r from-teal-400 to-blue-500 opacity-75"></div>
+  
 
-          <div className="flex flex-col justify-center w-full md:w-1/2">
-            <div>
-              <h2 className="text-4xl font-semibold mb-8">Product Information</h2>
-              <p className="text-gray-700">
-                {product.product_info}
-              </p>
-              <div className='mt-8'>
-                <button
-                  className="py-2 px-4 bg-blue-500 text-white rounded-full hover:bg-blue-400 transition duration-200"
-                  onClick={() => setShowForm(true)}
-                >
-                  Request a Quote
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+  {/* Navbar */}
+  <Navbar className="sticky top-0 z-50 bg-opacity-75 bg-gray-900 shadow-lg" />
 
-        {sizes.length > 0 && (
-          <div className="justify-center mt-6">
-            <div className="w-full bg-white p-4 rounded-xl shadow-lg">
-              <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
-                <thead>
-                  <tr>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
-                      Sizes Available
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {sizes.map((size, index) => (
-                    <tr key={index}>
-                      <td className="px-6 py-4 whitespace-nowrap border-b border-gray-300">{size.product_size}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
+  {/* Content Section */}
+  <div className="relative z-10 max-w-7xl mx-auto py-16 px-8">
+    <h1 className="text-5xl font-extrabold text-center mb-12 text-white">
+      {product.product_name}
+    </h1>
 
-        {showForm && (
+    <div className="flex flex-col md:flex-row items-start md:space-x-12">
+      {/* Product Image Carousel */}
+      <div className="w-auto md:w-1/2 mb-8 md:mb-0">
+      <Carousel
+  showThumbs={false}
+  infiniteLoop
+  useKeyboardArrows
+  showStatus={false}
+  showArrows={true}
+  className="w-full rounded-3xl overflow-hidden shadow-xl"
+>
+  {availableImages.map((image, index) => (
+    <div key={index} className="relative h-96">
+      <img
+        src={image}
+        alt={`img${index + 1}`}
+        className=" w-auto h-full opacity-90 hover:opacity-100 transition-opacity duration-200"
+      />
+    </div>
+  ))}
+</Carousel>
+      </div>
+
+
+      {/* Product Info */}
+      <div className="w-full md:w-1/2 space-y-8">
+        <h2 className="text-4xl font-bold text-white">Product Information</h2>
+        <p className="text-lg leading-relaxed text-gray-100">
+          {product.product_info}
+        </p>
+        <button
+          className="py-3 px-6 bg-gray-200 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-yellow-400 hover:shadow-xl transition-transform transform hover:-translate-y-1 duration-300"
+          onClick={() => setShowForm(true)}
+        >
+          Request a Quote
+        </button>
+      </div>
+    </div>
+
+    {/* Sizes Table */}
+    {sizes.length > 0 && (
+  <div className="justify-center mt-6">
+    <div className="w-full p-4  bg-cover bg-center" >
+      <h3 className="text-lg font-bold mb-4 text-gray-700 text-center">Sizes Available</h3>
+      <div className="flex flex-wrap justify-center gap-4">
+        {sizes.map((size, index) => (
+          <div key={index} className="flex-shrink-0 bg-gray-100 p-2 rounded-md border border-gray-300">
+            {size.product_size}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+
+    {/* Quote Form Modal */}
+    {showForm && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h2 className="text-2xl mb-4">Get a Quote</h2>
@@ -530,7 +603,7 @@ function Products1() {
               </form>
             </div>
           </div>
-        )}
+
 
         {showThankYou && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -551,6 +624,7 @@ function Products1() {
       </div>
       <Footer />
     </>
+
   );
 }
 

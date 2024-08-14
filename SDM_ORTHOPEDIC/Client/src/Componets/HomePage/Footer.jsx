@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/Images/logo.png';
 import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-gray-900">
@@ -55,6 +55,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:underline">License</a>
+                </li>
+                <li>
+                  <Link to="/AdminApp" className="text-gray-300 hover:underline"><u>Are You an Admin ?</u></Link>
                 </li>
               </ul>
             </nav>
