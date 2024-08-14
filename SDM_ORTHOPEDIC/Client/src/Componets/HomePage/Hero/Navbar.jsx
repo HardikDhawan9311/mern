@@ -101,7 +101,7 @@ const Navbar = () => {
                   ))}
                 </ul>
               </div>
-            )} */}
+            )} 
           </div>
           <NavLink
             to="/contact_us"
