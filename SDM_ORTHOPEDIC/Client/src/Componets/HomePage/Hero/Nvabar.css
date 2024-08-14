@@ -1,15 +1,3 @@
-.dropdown-menu {  
-    display: grid;  
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  
-  }  
-    
-  .category {  
-    grid-column: 1;  
-  }  
-    
-  .subcategory {  
-    grid-column: 2;  
-    margin-left: 20px; /* add some margin to indent subcategories */  
-  }
+
   
   

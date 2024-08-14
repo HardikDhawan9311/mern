@@ -523,109 +523,118 @@ function Products1() {
     {sizes.length > 0 && (
   <div className="justify-center mt-6">
     <div className="w-full p-4  bg-cover bg-center" >
-      <h3 className="text-lg font-bold mb-4 text-gray-700 text-center">Sizes Available</h3>
-      <div className="flex flex-wrap justify-center gap-4">
-        {sizes.map((size, index) => (
-          <div key={index} className="flex-shrink-0 bg-gray-100 p-2 rounded-md border border-gray-300">
-            {size.product_size}
-          </div>
-        ))}
+    <h3 className="text-lg font-bold mb-4 text-gray-700 text-center">Available Sizes</h3>
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white rounded-lg shadow-lg">
+          <thead>
+            <tr>
+              <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sizes.map((size, index) => (
+              <tr key={index}>
+                <td className="px-6 py-4 border-b border-gray-200 text-sm text-gray-700">{size.product_size}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 )}
+  </div>
 
-
-    {/* Quote Form Modal */}
-    {showForm && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h2 className="text-2xl mb-4">Get a Quote</h2>
-              <form onSubmit={handleFormSubmit}>
-                <div className="mb-4">
-                  <label className="block text-gray-700">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleFormChange}
-                    className="w-full px-3 py-2 border rounded"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleFormChange}
-                    className="w-full px-3 py-2 border rounded"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700">Phone No</label>
-                  <input
-                    type="text"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleFormChange}
-                    className="w-full px-3 py-2 border rounded"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700">Product ID</label>
-                  <input
-                    type="text"
-                    name="productId"
-                    value={formData.productId}
-                    readOnly
-                    className="w-full px-3 py-2 border rounded bg-gray-100"
-                  />
-                </div>
-                <div className="flex justify-end">
-                  <button
-                    type="button"
-                    className="mr-4 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
-                    onClick={() => setShowForm(false)}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-
-
-        {showThankYou && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h2 className="text-2xl mb-4">Thank You!</h2>
-              <p>Thank you for contacting us. We will get back to you shortly.</p>
-              <div className="flex justify-end mt-4">
-                <button
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                  onClick={() => setShowThankYou(false)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+  {/* Thank You Message */}
+  {showThankYou && (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+        <p className="text-gray-700 mb-4">Thank you for contacting us. We will get back to you soon.</p>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          onClick={() => setShowThankYou(false)}
+        >
+          Close
+        </button>
       </div>
-      <Footer />
-    </>
+    </div>
+  )}
 
-  );
+  {/* Quote Request Form */}
+  {showForm && (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl mb-4">Get a Quote</h2>
+        <form onSubmit={handleFormSubmit}>
+          <div className="mb-4">
+            <label className="block text-gray-700">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleFormChange}
+              className="w-full px-3 py-2 border rounded"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleFormChange}
+              className="w-full px-3 py-2 border rounded"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Phone No</label>
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleFormChange}
+              className="w-full px-3 py-2 border rounded"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Product ID</label>
+            <input
+              type="text"
+              name="productId"
+              value={formData.productId}
+              readOnly
+              className="w-full px-3 py-2 border rounded bg-gray-100"
+            />
+          </div>
+          <div className="flex justify-end">
+            <button
+              type="button"
+              className="mr-4 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+              onClick={() => setShowForm(false)}
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )}
+
+  {/* Footer */}
+  <Footer />
+</div>
+</>
+);
 }
 
 export default Products1;
