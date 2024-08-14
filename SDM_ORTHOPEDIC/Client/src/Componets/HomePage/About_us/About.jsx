@@ -49,12 +49,13 @@ const About = () => {
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10 text-center">
-            <h1 
-              id='heading' 
-              className="text-white font-semibold text-7xl animate_animated animate_backInDown"
-            >
-              ABOUT US
-            </h1>
+          <h1 
+  id='heading' 
+  className="text-white font-semibold text-7xl animate__animated animate__backInDown"
+>
+  ABOUT US
+</h1>
+
           </div>
         </div>
       </section>
@@ -101,7 +102,7 @@ const About = () => {
           <img 
             src="https://img.freepik.com/free-photo/doctor-nurse-medical-team-are-performing-surgical-operation-emergency-room-hospital-assistant-hands-out-scissor-instruments-surgeons-operation_657921-1075.jpg?t=st=1723012349~exp=1723015949~hmac=db4beaca9e4e609ab4ec816a01fe85e65e997b14903d8daeae2eb7bc624a0d4e&w=740"
             alt="image1" 
-            className=" h-70 w-40 md:w-1/2 rounded-lg right-4 absolute shadow-md m-3" 
+            className=" h-70 w-40 md:w-1/2 rounded-lg right-4 absolute shadow-md m-3 " 
           />
         </div>
       </div>
@@ -109,7 +110,7 @@ const About = () => {
   </div>
 
 
-  <div className="container mx-auto mt-20 px-4">
+  <div className="container mx-auto mt-28 px-4">
     <div className="flex flex-wrap">
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start mt-20">
@@ -152,7 +153,7 @@ const About = () => {
   </div>
 
 
-  <div className="container mx-auto mt-20 px-4">
+  <div className="container mx-auto mt-28 px-4">
     <div className="flex flex-wrap">
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start mt-20">
@@ -197,7 +198,7 @@ const About = () => {
 
 
 
-  <div className="container mx-auto mt-20 px-4">
+  <div className="container mx-auto mt-18 px-4">
     <div className="flex flex-wrap">
       <div className="w-full md:w-12/12 px-4 py-6">
         <div className="flex flex-col md:flex-row items-start mt-20">
@@ -249,7 +250,7 @@ const About = () => {
 <div className="container mx-auto p-4 mt-20">
       <div className="border border-gray-200 rounded-lg overflow-hidden">
         <div className="bg-gray-100 p-4 border-b border-gray-200">
-          <h3 className="text-lg font-semibold">Certifications</h3>
+        <h2 className="text-4xl font-semibold text-center">Our Certificates</h2>
         </div>
         <div className="flex justify-center p-4">
   <div className="flex justify-center h-auto w-1/3">

@@ -57,7 +57,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
-      <div className="flex items-center">
+      <div className="flex flex-item size-20 items-center">
         <a href="/"><img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" /></a>
       </div>
       <nav className="font-semibold text-lg flex-1 flex justify-end items-center">
@@ -144,10 +144,9 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <div className="relative">
-          <SearchBar setResults={setResults} />
-          {results && results.length > 0 && <SearchResultsList results={results} />}
-        </div>
+
+
+        
 
         <div className="flex items-center md:hidden">
           <button
@@ -157,10 +156,16 @@ const Navbar = () => {
             <i className="fas fa-bars text-xl"></i>
           </button>
         </div>
-      </nav>
 
-      {isMobileMenuOpen && (
-        <div className="absolute top-0 left-0 w-full bg-white shadow-lg rounded-md border border-gray-200 z-50 md:hidden">
+        
+
+        <div className="relative">
+          <SearchBar setResults={setResults} />
+          {results && results.length > 0 && <SearchResultsList results={results} />}
+        </div>
+
+        {isMobileMenuOpen && (
+        <div className="absolute top-0 left-0 w-48 bg-white shadow-lg rounded-md border border-gray-200 z-50 md:hidden">
           <ul className="space-y-2 p-4">
             <li
               className="relative cursor-pointer hover:text-blue-700"
@@ -199,6 +204,12 @@ const Navbar = () => {
           </ul>
         </div>
       )}
+
+        
+      </nav>
+      
+
+      
 
     </header>
   );

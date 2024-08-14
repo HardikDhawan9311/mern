@@ -57,7 +57,7 @@ const Footer = () => {
                   <a href="#" className="text-gray-300 hover:underline">License</a>
                 </li>
                 <li>
-                  <Link to="/AdminApp" className="text-gray-300 hover:underline"><u>Are You an Admin ?</u></Link>
+                  <Link to="/AdminApp" className="text-gray-300 hover:underline ">Are You an Admin ?</Link>
                 </li>
               </ul>
             </nav>
