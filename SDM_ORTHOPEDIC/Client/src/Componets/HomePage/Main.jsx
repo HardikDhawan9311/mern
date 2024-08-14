@@ -1,10 +1,30 @@
 import './Main.css';
 import main2 from "../../assets/Images/Main3.jpg"
 import CountUp from 'react-countup';
+import { useEffect, useState } from 'react';
+
 export default function Main() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.querySelector('.section-counter');
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+        setIsVisible(isVisible);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-    <div className="bg-sky-600">
+      <div className="bg-sky-600">
         <div className="lg:grid lg:grid-cols-2">
           <div className="py-24 px-10 lg:px-0 max-w-3xl lg:max-w-md mx-auto">
             <h2 className="text-4xl tracking-tight font-extrabold text-gray-100">
@@ -14,9 +34,9 @@ export default function Main() {
             <p className="text-gray-300 mt-5">
               The overall healthcare system in most Asian countries is relatively poorer than countries in Europe
               and North America. However, India is known for producing the best minds in international medicine
-              and science generally. At SDM Orthopaedic, our goal is to make world class orthopaedic products
+              and science generally. At SDM Orthopaedic, our goal is to make world-class orthopaedic products
               easily accessible for new and existing doctors, medical centres or hospitals, partners in India.
-              Our products are supplied all over India. SDM Orthopedic is a high quality orthopedic instruments & implants
+              Our products are supplied all over India. SDM Orthopedic is a high-quality orthopedic instruments & implants
               manufacturing unit in India. We manufacture a wide range of Spine implants
               and instruments. SDM is FDA Certified.
             </p>
@@ -38,12 +58,13 @@ export default function Main() {
           </div>
         </div>
       </div>
+
       <section className="section-counter py-12 bg-gray-100">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={20} duration={2} />
+                {isVisible && <CountUp end={20} duration={2} />}
               </b>
               <span className="text-xl font-semibold">+</span>
             </div>
@@ -53,7 +74,7 @@ export default function Main() {
           <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={2} duration={2} />
+                {isVisible && <CountUp end={2} duration={2} />}
               </b>
               <span className="text-xl font-semibold">k+</span>
             </div>
@@ -63,7 +84,7 @@ export default function Main() {
           <div className="single-counter animate__animated animate__fadeInUp flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
             <div className="inner flex items-baseline">
               <b className="counter text-4xl font-bold">
-                <CountUp end={100} duration={2} />
+                {isVisible && <CountUp end={100} duration={2} />}
               </b>
               <span className="text-xl font-semibold">%</span>
             </div>
