@@ -66,6 +66,12 @@ function API() {
     <>
     <Navbar/>
     <div className="min-h-screen bg-grey-100 p-6">
+      <div>
+      <h1 className="text-center text-6xl font-extrabold text-gray-800 tracking-wide leading-tight md:text-7xl lg:text-8xl mb-8 transition-transform duration-800 ease-in-out hover:scale-105 ">
+  Products
+</h1>
+
+      </div>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <div key={product.id} className="mt-16 py-4 px-4 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 max-w-xs">

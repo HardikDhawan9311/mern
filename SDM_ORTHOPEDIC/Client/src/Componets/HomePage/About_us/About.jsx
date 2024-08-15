@@ -292,7 +292,7 @@ const About = () => {
           <div className="inner flex items-baseline">
             <b className="counter text-4xl font-bold">
               {isVisible && (
-                <CountUp end={19} duration={5} />
+                <CountUp end={2} duration={5} />
               )}
             </b>
             <span className="text-xl font-semibold">k+</span>

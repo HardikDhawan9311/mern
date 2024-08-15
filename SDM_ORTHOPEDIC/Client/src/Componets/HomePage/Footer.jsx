@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Company Section */}
           <div className="flex flex-col">
-            <div className="flex justify-center text-teal-300 sm:justify-start">
+            <div className=" flex flex-item size-20 items-center  text-teal-300  ">
               <img src={logo} alt="logo" className='h-8' />
               <h2 className='font-bold text-white ml-2 text-3xl'>ORTHOPEDICS</h2>
             </div>
@@ -57,7 +57,7 @@ const Footer = () => {
                   <a href="#" className="text-gray-300 hover:underline">License</a>
                 </li>
                 <li>
-                  <Link to="/AdminApp" className="text-gray-300 hover:underline ">Are You an Admin ?</Link>
+                  <Link to="/AdminApp" className="text-gray-300 hover:underline"><u>Are You an Admin ?</u></Link>
                 </li>
               </ul>
             </nav>

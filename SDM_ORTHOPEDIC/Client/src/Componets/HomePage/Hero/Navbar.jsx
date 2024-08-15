@@ -151,20 +151,11 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           <button
             onClick={handleMobileMenuToggle}
-            className="text-gray-600 focus:outline-none"
+            className="text-gray-600 focus:outline-none mr-5"
           >
             <i className="fas fa-bars text-xl"></i>
           </button>
-        </div>
-
-        
-
-        <div className="relative">
-          <SearchBar setResults={setResults} />
-          {results && results.length > 0 && <SearchResultsList results={results} />}
-        </div>
-
-        {isMobileMenuOpen && (
+          {isMobileMenuOpen && (
         <div className="absolute top-0 left-0 w-48 bg-white shadow-lg rounded-md border border-gray-200 z-50 md:hidden">
           <ul className="space-y-2 p-4">
             <li
@@ -204,6 +195,16 @@ const Navbar = () => {
           </ul>
         </div>
       )}
+        </div>
+
+        
+
+        <div className="relative">
+          <SearchBar setResults={setResults} />
+          {results && results.length > 0 && <SearchResultsList results={results} />}
+        </div>
+
+        
 
         
       </nav>
