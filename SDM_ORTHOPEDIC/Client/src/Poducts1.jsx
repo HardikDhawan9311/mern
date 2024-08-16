@@ -188,6 +188,7 @@ function Products1() {
     <h1 className="text-5xl font-extrabold text-center mb-12 text-white">
       {product.product_name}
     </h1>
+    
 
     <div className="flex flex-col md:flex-row items-start md:space-x-12">
       {/* Product Image Carousel */}
@@ -272,7 +273,7 @@ function Products1() {
 
   {/* Quote Request Form */}
   {showForm && (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl mb-4">Get a Quote</h2>
         <form onSubmit={handleFormSubmit}>

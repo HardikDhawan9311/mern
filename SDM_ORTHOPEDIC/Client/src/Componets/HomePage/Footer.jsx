@@ -18,7 +18,8 @@ const Footer = () => {
               Address: Sector B1, Plot No. E-16, Tronica City Industrial Area Loni, Ghaziabad, Uttar Pradesh - 201103
             </address>
             <br />
-            <p className='text-white'>Contact: 9810648410, 9354256801</p>
+            <p className='text-white'>Contact: <a href="tel:9810648410">9810648410</a>, <a href="tel:9354256801">9354256801</a>
+            </p>
           </div>
 
           {/* Company Links Section */}
@@ -76,7 +77,7 @@ const Footer = () => {
               <a href="https://instagram.com" className="text-gray-300 hover:text-white" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
-              <a href="mailto:example@example.com" className="text-gray-300 hover:text-white" aria-label="Gmail">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sdmorthopedic@yahoo.com" target='blank' className="text-gray-300 hover:text-white" aria-label="Gmail">
                 <FaEnvelope size={20} />
               </a>
             </div>

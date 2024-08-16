@@ -3,6 +3,7 @@ import Contactus from "./Contactus";
 import Navbar from "../Hero/Navbar";
 import Footer from "../Footer";
 
+
 export default function Contact() {
   
   return (
@@ -16,7 +17,7 @@ export default function Contact() {
             alt="Contact Us"
             className="w-full h-full object-cover " // Ensure the image covers the container
           />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl font-bold">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl font-bold ">
             Contact Us
           </div>
         </div>

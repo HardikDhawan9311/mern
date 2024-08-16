@@ -57,9 +57,15 @@ const Navbar = () => {
 
   return (
     <header className="bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
-      <div className="flex flex-item size-20 items-center">
-        <a href="/"><img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" /></a>
-      </div>
+      <div className="flex items-center">
+      <div className=" flex flex-item size-20 items-center  text-teal-300  ">
+        <a href="/">
+              <img src={logo} alt="logo" className='h-8' />
+              {/* <h2 className='font-bold text-black ml-2 text-3xl size-16'>ORTHOPEDICS</h2> */}
+              </a>
+            </div>
+</div>
+
       <nav className="font-semibold text-lg flex-1 flex justify-end items-center">
         <div className={`hidden md:flex items-center space-x-4 transition-transform duration-300 ease-in-out`}>
           <NavLink
@@ -87,7 +93,7 @@ const Navbar = () => {
         {Object.keys(categories).map((categoryName) => (
           <li key={categoryName} className="relative group mr-4">
             <span
-              className="block px-4 py-2 text-black-500 hover:text-blue-700 cursor-pointer"
+              className="block px-10 py-2 text-black-500 hover:text-blue-700 cursor-pointer"
               style={{ fontWeight: 'bold' }}
               onMouseEnter={() => handleCategoryClick(categoryName)}
             >
@@ -111,7 +117,7 @@ const Navbar = () => {
                 {!showAllSubcategories[categoryName] && categories[categoryName].length > 4 && (
                   <li className="cursor-pointer mr-4">
                     <span
-                      onClick={() => handleMoreClick(categoryName)}
+                      onClick={() => handleMoreClick()}
                       className="block px-4 py-2 text-blue-700 hover:text-blue-900 cursor-pointer"
                     >
                       More...
@@ -146,12 +152,15 @@ const Navbar = () => {
 
 
 
-        
+        <div className="relative">
+          <SearchBar setResults={setResults} />
+          {results && results.length > 0 && <SearchResultsList results={results} />}
+        </div>
 
         <div className="flex items-center md:hidden">
           <button
             onClick={handleMobileMenuToggle}
-            className="text-gray-600 focus:outline-none mr-5"
+            className="text-gray-600 focus:outline-none ml-5"
           >
             <i className="fas fa-bars text-xl"></i>
           </button>
@@ -171,15 +180,7 @@ const Navbar = () => {
                     {Object.keys(categories).map((categoryName) => (
                       <li key={categoryName} className="relative cursor-pointer hover:text-green-700">
                         {categoryName}
-                        <ul className="mt-2 pl-4">
-                          {categories[categoryName].map((product) => (
-                            <li key={product.product_id} className="cursor-pointer hover:text-blue-700">
-                              <Link to={`/products/${product.product_id}`}>
-                                {product.product_name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                        
                       </li>
                     ))}
                   </ul>
@@ -196,18 +197,7 @@ const Navbar = () => {
         </div>
       )}
         </div>
-
-        
-
-        <div className="relative">
-          <SearchBar setResults={setResults} />
-          {results && results.length > 0 && <SearchResultsList results={results} />}
-        </div>
-
-        
-
-        
-      </nav>
+        </nav>
       
 
       
