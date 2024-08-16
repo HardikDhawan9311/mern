@@ -165,7 +165,7 @@ const About = () => {
           <div className="absolute right-4 md:w-1/2 md:px-4 mt-4 md:mt-20 border border-gray-300  rounded-lg shadow-lg p-6 m-3 bg-white" data-aos="fade-right">
             <h6 className="text-2xl font-semibold">Our Products</h6>
             <p className="mt-2 mb-4 text-blueGray-500 whitespace-pre-line text-xl">
-            We offer a comprehensive range of orthopedic implants and instruments:\nJoint Replacement Implants\nTrauma Implants\nSpinal Implants\nOrthopedic Surgical Instruments
+            We offer a comprehensive range of orthopedic implants and instruments: Joint Replacement Implants, Trauma Implants, Spinal Implants, Orthopedic Surgical Instruments
             </p>
           </div>
         </div>
