@@ -8,7 +8,7 @@ import API from './Api';
 import Products1 from './Poducts1';
 import ChatbotButton from './Componets/chatbot/Chatbutton';
 import AdminApp from './AdminApp'
-
+import CategoryPage from './products/categories';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact_us" element={<Contact />} />
         <Route path="/product" element={<API />} />
-      
+        <Route  path="/category/:categoryName" element={<CategoryPage/>} />
         <Route path="/products/:id" element={<Products1 />} />
         <Route path='/AdminApp' element={<AdminApp/>}/>
       </Routes>
