@@ -34,7 +34,7 @@ const ContactUs = () => {
       console.log('Submitting form data:', requestData); // Log form data for debugging
 
       // Send form data to the backend
-      // await axios.post('http://localhost:8080/users', requestData);
+      await axios.post('http://localhost:8080/users', requestData);
 
       // Send confirmation email using Nodemailer
       await axios.post('http://localhost:5000/send-email', {
