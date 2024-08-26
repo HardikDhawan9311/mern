@@ -104,74 +104,7 @@ function Products1() {
     
   };
 
-//   return (  
-//     <>
-//       <Navbar />
-//       <div className="bg-cover bg-center min-h-screen flex flex-col items-center" style={{ backgroundImage: `url(${image5})` }}>
-//         <h1 className="text-6xl font-bold text-center p-8 mb-2 relative mt-4">
-//           {product.product_name}
-//           <div className="absolute left-1/2 transform -translate-x-1/2 mt-6 h-2 w-16 bg-gray-300"></div>
-//         </h1>
-//         <div className="flex flex-col md:flex-row items-center justify-center w-full px-4">
-//           <div className="flex justify-center w-full md:w-1/2 md:mb-0 md:mr-4">
-//             <Carousel
-//               showThumbs={false}
-//               infiniteLoop
-//               useKeyboardArrows
-//               className="w-full max-w-md border-4 border-gray-500 rounded-lg"
-//             >
-//               {availableImages.map((image, index) => (
-//                 <div key={index}>
-//                   <img
-//                     src={image}
-//                     alt={`img${index + 1}`}
-//                     style={{ width: '450px', height: '450px' }}
-//                   />
-//                 </div>
-//               ))}
-//             </Carousel>
-//           </div>
 
-//           <div className="flex flex-col justify-center w-full md:w-1/2">
-//             <div>
-//               <h2 className="text-4xl font-semibold mb-8">Product Information</h2>
-//               <p className="text-gray-700">
-//                 {product.product_info}
-//               </p>
-//               <div className='mt-8'>
-//                 <button
-//                   className="py-2 px-4 bg-blue-500 text-white rounded-full hover:bg-blue-400 transition duration-200"
-//                   onClick={() => setShowForm(true)}
-//                 >
-//                   Request a Quote
-//                 </button>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//         {sizes.length > 0 && (
-//           <div className="justify-center mt-6">
-//             <div className="w-full bg-white p-4 rounded-xl shadow-lg">
-//               <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
-//                 <thead>
-//                   <tr>
-//                     <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
-//                       Sizes Available
-//                     </th>
-//                   </tr>
-//                 </thead>
-//                 <tbody className="bg-white divide-y divide-gray-200">
-//                   {sizes.map((size, index) => (
-//                     <tr key={index}>
-//                       <td className="px-6 py-4 whitespace-nowrap border-b border-gray-300">{size.product_size}</td>
-//                     </tr>
-//                   ))}
-//                 </tbody>
-//               </table>
-//             </div>
-//           </div>
-//         )}
 
   return (
     <>
@@ -257,7 +190,7 @@ function Products1() {
 
   {/* Thank You Message */}
   {showThankYou && (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
         <p className="text-gray-700 mb-4">Thank you for contacting us. We will get back to you soon.</p>
@@ -340,7 +273,7 @@ function Products1() {
     </div>
   )}
 </div>
-  {/* Footer */}
+ 
   <Footer />
 
 </>

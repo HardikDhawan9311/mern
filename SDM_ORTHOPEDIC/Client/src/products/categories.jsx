@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import Footer from '../Componets/HomePage/Footer';
+import Navbar from '../Componets/HomePage/Hero/Navbar';
 
 
 const CategoryPage = () => {
@@ -8,6 +10,7 @@ const CategoryPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,18 +48,33 @@ const CategoryPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log('Form Data:', formData);
+
+  //   try {
+  //     await axios.post('http://localhost:1234/send-email', formData);
+  //     alert('Email sent successfully');
+  //   } catch (error) {
+  //     console.error('Error sending email:', error);
+  //     alert('Error sending email');
+  //   }
+  //   setShowForm(false);
+  // };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log('Form Data:', formData);
 
     try {
+      setShowThankYou(true);  // Show thank you message
+      setShowForm(false);
       await axios.post('http://localhost:1234/send-email', formData);
-      alert('Email sent successfully');
+      
     } catch (error) {
       console.error('Error sending email:', error);
       alert('Error sending email');
     }
-    setShowForm(false);
+    
   };
 
   if (loading) {
@@ -69,6 +87,7 @@ const CategoryPage = () => {
 
   return (
     <>
+    <Navbar/>
       {/* <h1>{categoryName}</h1> */}
       <h1 className="text-6xl font-bold text-center p-8 mb-2 relative mt-4">
           {categoryName}
@@ -98,6 +117,20 @@ const CategoryPage = () => {
           ))}
         </div>
 
+ {showThankYou && (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+        <p className="text-gray-700 mb-4">Thank you for contacting us. We will get back to you soon.</p>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          onClick={() => setShowThankYou(false)}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  )}
         {showForm && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -166,7 +199,7 @@ const CategoryPage = () => {
           </div>
         )}
       </div>
-      
+      <Footer/>
     </>
   );
 };

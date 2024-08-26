@@ -28,7 +28,7 @@ app.post('/login', async (req, res) => {
   res.json({ accessToken });
 });
 
-
+//to fetch products
 app.get("/products", (req, res) => {
   pool.query("SELECT * FROM products", (err, results) => {
     if (err) {
@@ -39,7 +39,7 @@ app.get("/products", (req, res) => {
     }
   });
 });
-
+// to fetch products info based on id 
 app.get('/products/:id', async (req, res) => {
   const productId = req.params.id;
   console.log(`Received request for product ID: ${productId}`);
@@ -61,7 +61,7 @@ app.get('/products/:id', async (req, res) => {
   }
 });
 
-// Updated route to get sizes by product_id
+// to get sizes by product_id
 app.get('/products/:productId/sizes', async (req, res) => {
   const productId = req.params.productId;
 
@@ -231,7 +231,7 @@ app.put('/products/:productId/price', async (req, res) => {
 
   try {
     await pool1.query(
-      'UPDATE price SET product_name = ?, product_size = ?, price = ? WHERE product_id = ?',
+      'UPDATE prices SET product_name = ?, product_size = ?, price = ? WHERE product_id = ?',
       [product_name, product_size, price, productId]
     );
     res.status(200).json({ message: 'Price updated successfully.' });
@@ -247,7 +247,7 @@ app.delete('/products/:productId/price', async (req, res) => {
   const productId = req.params.productId;
 
   try {
-    await pool1.query('DELETE FROM price WHERE product_id = ?', [productId]);
+    await pool1.query('DELETE FROM prices WHERE product_id = ?', [productId]);
     res.status(200).json({ message: 'Price deleted successfully.' });
   } catch (err) {
     console.error('Error executing query', err.stack);
@@ -260,7 +260,7 @@ app.get('/products/:productId/price', async (req, res) => {
   const productId = req.params.productId;
 
   try {
-    const [results] = await pool1.query('SELECT * FROM price WHERE product_id = ?', [productId]);
+    const [results] = await pool1.query('SELECT * FROM prices WHERE product_id = ?', [productId]);
     res.status(200).json(results);
   } catch (err) {
     console.error('Error executing query', err.stack);
@@ -268,7 +268,7 @@ app.get('/products/:productId/price', async (req, res) => {
   }
 });
 
-// Updated route to group products by their categories
+//  to group products by their categories
 app.get("/categories", async (req, res) => {
   try {
     const [products] = await pool1.query("SELECT * FROM products");
@@ -374,23 +374,23 @@ ${sizePriceDetails}`
 
 
 
-app.post('/submit-form', (req, res) => {
-  const { name, email, phone, productId } = req.body;
-  setTimeout(() => {
-    let options = {
-      mode: 'text',
-      pythonOptions: ['-u'], // get print results in real-time
-      args: [name, email, phone, productId]
-    };
+// app.post('/submit-form', (req, res) => {
+//   const { name, email, phone, productId } = req.body;
+//   setTimeout(() => {
+//     let options = {
+//       mode: 'text',
+//       pythonOptions: ['-u'], // get print results in real-time
+//       args: [name, email, phone, productId]
+//     };
 
-    PythonShell.run('send_email.py', options, function (err, result) {
-      if (err) throw err;
-      console.log('result: ', result.toString());
-    });
-  }, 3000);
+//     PythonShell.run('send_email.py', options, function (err, result) {
+//       if (err) throw err;
+//       console.log('result: ', result.toString());
+//     });
+//   }, 3000);
 
-  res.send('Form submitted successfully!');
-});
+//   res.send('Form submitted successfully!');
+// });
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

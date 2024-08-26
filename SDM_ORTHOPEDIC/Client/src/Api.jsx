@@ -5,6 +5,7 @@ import Navbar from './Componets/HomePage/Hero/Navbar';
 import Footer from './Componets/HomePage/Footer';
 
 function API() {
+  const [showThankYou, setShowThankYou] = useState(false);
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -49,18 +50,33 @@ function API() {
     setFormData({ ...formData, [name]: value });
   };
 
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log('Form Data:', formData); // Debugging
+
+  //   try {
+  //     await axios.post('http://localhost:1234/send-email', formData);
+  //     alert('Email sent successfully');
+  //   } catch (error) {
+  //     console.error('Error sending email:', error);
+  //     alert('Error sending email');
+  //   }
+  //   setShowForm(false);
+  // };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData); // Debugging
+    console.log('Form Data:', formData);
 
     try {
+      setShowThankYou(true);  // Show thank you message
+      setShowForm(false);
       await axios.post('http://localhost:1234/send-email', formData);
-      alert('Email sent successfully');
+      
     } catch (error) {
       console.error('Error sending email:', error);
       alert('Error sending email');
     }
-    setShowForm(false);
+    
   };
   return (
     <>
@@ -103,6 +119,20 @@ function API() {
         ))}
       </div>
 
+{showThankYou && (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+        <p className="text-gray-700 mb-4">Thank you for contacting us. We will get back to you soon.</p>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          onClick={() => setShowThankYou(false)}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  )}
       {showForm && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-8 rounded-lg shadow-lg">
