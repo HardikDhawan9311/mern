@@ -45,24 +45,12 @@ function API() {
     setFormData({ ...formData, productId });
     setShowForm(true);
   };
+  
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // const handleFormSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log('Form Data:', formData); // Debugging
-
-  //   try {
-  //     await axios.post('http://localhost:1234/send-email', formData);
-  //     alert('Email sent successfully');
-  //   } catch (error) {
-  //     console.error('Error sending email:', error);
-  //     alert('Error sending email');
-  //   }
-  //   setShowForm(false);
-  // };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log('Form Data:', formData);
@@ -81,19 +69,19 @@ function API() {
   return (
     <>
     <Navbar/>
-    <div className="min-h-screen bg-grey-100 p-6">
+    <div className="min-h-screen bg-gray-300 p-6">
       <div>
-      <h1 className="text-center text-6xl font-extrabold text-gray-800 md:text-7xl lg:text-8xl mb-8 transition-transform duration-800 ease-in-out hover:scale-105  ">
+      <h1 className="text-center text-6xl font-lilita text-gray-800 md:text-7xl lg:text-8xl mb-8 transition-transform duration-800 ease-in-out hover:scale-105  ">
   Products
 </h1>
-<div className="absolute left-1/2 transform -translate-x-1/2 h-2 w-16 bg-gray-300"></div>
+<div className="absolute left-1/2 transform -translate-x-1/2 h-2 w-16 bg-gray-500"></div>
 
           
        
     
 
       </div>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {products.map((product) => (
           <div key={product.id} className="mt-16 py-4 px-4 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 max-w-xs hover:bg-gray-200">
             <div className="w-sm">

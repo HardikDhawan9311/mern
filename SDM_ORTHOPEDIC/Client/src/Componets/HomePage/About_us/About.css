@@ -1,23 +1,21 @@
-/* About.css */
-
 @media (max-width: 767px) {
   .flex-col {
-    flex-direction: column !important; /* Ensure it forces column direction */
+    flex-direction: column !important; /* Ensures certificates stack vertically */
   }
 
   .absolute {
-    position: static !important; /* Reset absolute positioning */
-    margin-top: 20px !important; /* Add margin to separate elements */
+    position: static !important;
+    margin-top: 20px !important;
   }
 
   .relative {
-    position: relative !important; /* Ensure relative positioning */
+    position: relative !important;
   }
 
   img {
-    width: 100% !important; /* Make images take full width of the container */
-    height: auto !important; /* Maintain aspect ratio */
-    margin: 10px 0; /* Add some margin to space out images */
+    width: 100% !important;
+    height: auto !important;
+    margin: 10px 0; /* Ensure spacing between certificates */
   }
 
   .container {

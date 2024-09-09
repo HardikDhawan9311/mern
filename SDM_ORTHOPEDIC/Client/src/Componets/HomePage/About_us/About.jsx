@@ -250,18 +250,18 @@ const About = () => {
 <div className="container mx-auto p-4 mt-20">
       <div className="border border-gray-200 rounded-lg overflow-hidden">
         <div className="bg-gray-100 p-4 border-b border-gray-200">
-        <h2 className="text-4xl font-semibold text-center">Our Certificates</h2>
+          <h2 className="text-4xl font-semibold text-center">Our Certificates</h2>
         </div>
-        <div className="flex justify-center p-4">
-  <div className="flex justify-center h-auto w-1/3">
-    <img src={certificate1} alt="Certificate 1" className="object-contain p-8 shadow-lg" />
-  </div>
-  <div className="flex justify-end h-auto w-1/3">
-    <img src={certificate2} alt="Certificate 2" className="object-contain p-8 shadow-lg" />
-  </div>
-</div>
-</div>
+        <div className="flex flex-col md:flex-row justify-center p-4">
+          <div className="md:w-1/3 w-full">
+            <img src={certificate1} alt="Certificate 1" className="object-contain p-8 shadow-lg" />
+          </div>
+          <div className="md:w-1/3 w-full">
+            <img src={certificate2} alt="Certificate 2" className="object-contain p-8 shadow-lg" />
+          </div>
+        </div>
       </div>
+    </div>
     
 
 
