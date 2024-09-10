@@ -59,7 +59,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-blue-100 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
+    <header className="bg-blue-200 shadow-md flex justify-between items-center px-4 md:px-8 py-2 z-20 relative">
       <div className="flex flex-item size-20 items-center">
         <a href="/"><img src={logo} alt="Logo" className="h-8 w-20 md:h-10 md:w-22 mr-4" /></a>
       </div>
@@ -86,10 +86,10 @@ const Navbar = () => {
   </NavLink>
   {isDropdownOpen && (
     <div
-      className="absolute left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg border border-gray-300 p-6 z-50"
+      className="absolute font-cardo left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg border border-gray-300 p-6 z-50"
       style={{ minWidth: '1100px' }}
     >
-      <ul className="flex flex-wrap justify-center gap-4">
+      <ul className="flex flex-wrap capitalize justify-center text-xl gap-4">
         {Object.keys(categories).map((categoryName) => (
           <li key={categoryName} className="relative group">
             <span
@@ -99,14 +99,14 @@ const Navbar = () => {
               {categoryName}
             </span>
             {activeCategory === categoryName && (
-              <ul className="absolute left-0 top-full bg-white shadow-lg rounded-lg border border-gray-300 p-3 mt-2 z-50">
+              <ul className="absolute left-0 top-full bg-white   shadow-lg rounded-lg border border-gray-300 p-3 mt-2 z-50">
                 {categories[categoryName]
                   .slice(0, showAllSubcategories[categoryName] ? categories[categoryName].length : 4)
                   .map((product) => (
-                    <li key={product.product_id} className="cursor-pointer">
+                    <li key={product.product_id} className="cursor-pointer ">
                       <Link
                         to={`/products/${product.product_id}`}
-                        className="block px-4 py-2 text-gray-600 hover:text-blue-700 transition duration-200 ease-in-out"
+                        className="block px-4 py-2 text-gray-600  hover:text-blue-700 transition duration-200 ease-in-out"
                         onClick={() => handleProductClick(product)}
                       >
                         {product.product_name}

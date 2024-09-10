@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         lilita: ['Lilita One', 'cursive'],
+        cardo: ['Cardo', 'serif'],
+        merriweather: ['Merriweather', 'serif'],
       }
       },
   },
