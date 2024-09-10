@@ -18,7 +18,14 @@ function App() {
         <div className="App">
             {isAuthenticated ? (
                 <>
-                    <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+                    <button
+                        onClick={handleLogout}
+                        className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300"
+                    >
+                        Logout
+                    </button>
+                    
+
                     <AdminPanel />
                 </>
             ) : (

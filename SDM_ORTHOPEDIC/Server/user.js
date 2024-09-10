@@ -364,7 +364,7 @@ ${sizePriceDetails}`
 
     // Send both emails
     await transporter.sendMail(userMailOptions);
-    await transporter.sendMail(ownerMailOptions);
+    await transporter.sendMail(ownerMailOptions); 
     res.status(200).send('Emails sent successfully');
   } catch (error) {
     console.error('Error sending email:', error);
