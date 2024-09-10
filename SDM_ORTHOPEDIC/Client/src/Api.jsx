@@ -69,9 +69,9 @@ function API() {
   return (
     <>
     <Navbar/>
-    <div className="min-h-screen bg-gray-300 p-6">
+    <div className="min-h-screen bg-blue-100 p-6">
       <div>
-      <h1 className="text-center text-6xl font-lilita text-gray-800 md:text-7xl lg:text-8xl mb-8 transition-transform duration-800 ease-in-out hover:scale-105  ">
+      <h1 className="text-center text-6xl font-lilita text-black md:text-7xl lg:text-8xl mb-8 transition-transform duration-800 ease-in-out hover:scale-105  ">
   Products
 </h1>
 <div className="absolute left-1/2 transform -translate-x-1/2 h-2 w-16 bg-gray-500"></div>
@@ -89,7 +89,7 @@ function API() {
               <img className="w-full h-40 object-cover mx-auto rounded-t-xl" src={product.image1} alt={product.product_name} />
               </Link>
               <div className="mt-4 text-black-600 text-center">
-                <h1 className="text-xl font-bold">{product.product_name}</h1>
+                <h1 className="text-xl font-bold font-merriweather">{product.product_name}</h1>
                 <p className="mt-4 text-black-600">{truncateText(product.product_info, 50)}</p>
                 <button 
                   className="mt-8 mb-4 py-2 px-14 rounded-full bg-blue-500 text-white tracking-widest hover:bg-blue-400 transition duration-200"

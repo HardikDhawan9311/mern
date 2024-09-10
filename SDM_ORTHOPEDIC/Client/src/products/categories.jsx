@@ -89,9 +89,10 @@ const CategoryPage = () => {
     <>
     <Navbar/>
       {/* <h1>{categoryName}</h1> */}
-      <h1 className="text-6xl font-bold text-center p-8 mb-2 relative mt-4">
+      <div className='bg-blue-100'>
+        <h1 className="text-6xl uppercase font-bold text-center p-8 mb-2 relative  ">
           {categoryName}
-          <div className="absolute left-1/2 transform -translate-x-1/2 mt-6 h-2 w-16 bg-gray-300"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 mt-6 h-2 w-16 bg-gray-500"></div>
         </h1>
       <div className="min-h-screen bg-grey-100 p-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -198,6 +199,7 @@ const CategoryPage = () => {
             </div>
           </div>
         )}
+      </div>
       </div>
       <Footer/>
     </>
