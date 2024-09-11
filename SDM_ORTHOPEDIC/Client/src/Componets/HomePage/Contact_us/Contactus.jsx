@@ -30,7 +30,7 @@ const ContactUs = () => {
         company: formData.company,
         message: formData.message
       };
-
+      setSubmitted(true);
       console.log('Submitting form data:', requestData); // Log form data for debugging
 
       // Send form data to the backend
