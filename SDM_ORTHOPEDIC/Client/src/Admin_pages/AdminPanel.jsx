@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductList from '../Admin_Components/ProductList';
 import ProductForm from '../Admin_Components/ProductForm';
+import BackArrow from '../assets/Images/BackArrow.png'; // Correct image import
 import axios from 'axios';
 
 function AdminPanel() {
@@ -24,15 +25,40 @@ function AdminPanel() {
         window.location.reload();
     };
 
+    const handleBackToList = () => {
+        setIsEditing(false);
+        setSelectedProduct(null);
+    };
+
     return (
         <div className="container mx-auto p-4">
             {isEditing ? (
-                <ProductForm product={selectedProduct} onSave={handleSave} />
+                <div>
+                    {/* Back to Product List button with Image */}
+                    <button
+                        onClick={handleBackToList}
+                        className="px-6 py-3 mb-4"
+                    >
+                        <img 
+                            src={BackArrow} // Corrected image source
+                            alt="Back" 
+                            className="w-6 h-6 inline-block"
+                        />
+                    </button>
+
+                    {/* Product Form */}
+                    <ProductForm product={selectedProduct} onSave={handleSave} />
+                </div>
             ) : (
                 <div>
-                    <button onClick={() => setIsEditing(true)} className="bg-green-500 text-white px-4 py-2 rounded mb-4">
+                    <button
+                        onClick={() => setIsEditing(true)}
+                        className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 mb-4"
+                    >
                         Create New Product
                     </button>
+
+                    {/* Product List */}
                     <ProductList onEdit={handleEdit} onDelete={handleDelete} />
                 </div>
             )}

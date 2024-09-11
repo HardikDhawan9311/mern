@@ -39,6 +39,21 @@ import mysql from 'mysql2';
 
 
 export const pool = mysql.createPool({
+<<<<<<< HEAD
+  host: '127.0.0.1',
+ user: 'root',
+ password: 'root',
+ database: 'productsapi',
+ port: 3306
+})
+
+export const pool1 = mysql.createPool({
+ host: '127.0.0.1',
+user: 'root',
+password: 'root',
+database: 'productsapi',
+port: 3306
+=======
   host: 'localhost',
 
   user: 'root',
@@ -54,6 +69,7 @@ export const pool1 = mysql.createPool({
   database: 'productapi',
   port: 3306,
 
+>>>>>>> 5df574b5154065e94f1bc272c78d0de2f6f9ed2b
 }).promise()
 
 
